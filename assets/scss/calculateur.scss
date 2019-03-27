@@ -1,0 +1,41 @@
+.articleGroup {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.article {
+    border: 1px solid black;
+    text-align: center;
+    margin: 10px;
+    width: 20%;
+}
+
+.article img {
+    width: 40%;
+}
+
+.article h3 {
+    font-size: 1.2rem;
+}
+
+.article div {
+    display: flex;
+    justify-content: center;
+}
+
+.article button {
+    position: relative;
+    bottom: 5px;
+}
+
+/* 
+#recap {
+    top: 45px;
+    right: 0;
+    width: 25%;
+    position: fixed;
+    text-align: center;
+    border-left: 1px black solid;
+    height: 100%;
+    overflow: scroll;
+} */

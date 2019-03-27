@@ -1,0 +1,499 @@
+@font-face {
+  font-family: 'bizzco';
+  src:  url('../font/bizzco.eot?tp0h8l');
+  src:  url('../font/bizzco.eot?tp0h8l#iefix') format('embedded-opentype'),
+    url('../font/bizzco.ttf?tp0h8l') format('truetype'),
+    url('../font/bizzco.woff?tp0h8l') format('woff'),
+    url('../font/bizzco.svg?tp0h8l#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="bizzco-"], [class*=" bizzco-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'bizzco' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+.bizzco-add:before {
+  content: "\e995";
+}
+.bizzco-analytics:before {
+  content: "\e909";
+}
+.bizzco-backup:before {
+  content: "\e90a";
+}
+.bizzco-blogging:before {
+  content: "\e90b";
+}
+.bizzco-browser1:before {
+  content: "\e90c";
+}
+.bizzco-browser-11:before {
+  content: "\e90d";
+}
+.bizzco-browser-2:before {
+  content: "\e90e";
+}
+.bizzco-bug:before {
+  content: "\e90f";
+}
+.bizzco-cloud-computing:before {
+  content: "\e910";
+}
+.bizzco-coding:before {
+  content: "\e911";
+}
+.bizzco-customer:before {
+  content: "\e912";
+}
+.bizzco-design:before {
+  content: "\e913";
+}
+.bizzco-devices:before {
+  content: "\e914";
+}
+.bizzco-domain-registration:before {
+  content: "\e915";
+}
+.bizzco-email:before {
+  content: "\e916";
+}
+.bizzco-folder1:before {
+  content: "\e917";
+}
+.bizzco-funnel:before {
+  content: "\e918";
+}
+.bizzco-idea2:before {
+  content: "\e919";
+}
+.bizzco-image:before {
+  content: "\e91a";
+}
+.bizzco-keywords:before {
+  content: "\e91b";
+}
+.bizzco-link:before {
+  content: "\e91c";
+}
+.bizzco-map:before {
+  content: "\e91d";
+}
+.bizzco-monitoring:before {
+  content: "\e91e";
+}
+.bizzco-music:before {
+  content: "\e91f";
+}
+.bizzco-newspaper:before {
+  content: "\e920";
+}
+.bizzco-online-shop:before {
+  content: "\e921";
+}
+.bizzco-pay-per-click:before {
+  content: "\e922";
+}
+.bizzco-quality:before {
+  content: "\e923";
+}
+.bizzco-ranking:before {
+  content: "\e924";
+}
+.bizzco-screen:before {
+  content: "\e925";
+}
+.bizzco-search2:before {
+  content: "\e926";
+}
+.bizzco-search-1:before {
+  content: "\e927";
+}
+.bizzco-search-engine:before {
+  content: "\e928";
+}
+.bizzco-search-engine-1:before {
+  content: "\e929";
+}
+.bizzco-server:before {
+  content: "\e92a";
+}
+.bizzco-shared-folder:before {
+  content: "\e92b";
+}
+.bizzco-sharing-archives:before {
+  content: "\e92c";
+}
+.bizzco-shield:before {
+  content: "\e92d";
+}
+.bizzco-sitemap:before {
+  content: "\e92e";
+}
+.bizzco-smartphone1:before {
+  content: "\e92f";
+}
+.bizzco-social-media:before {
+  content: "\e930";
+}
+.bizzco-speech-bubbles:before {
+  content: "\e931";
+}
+.bizzco-speedometer:before {
+  content: "\e932";
+}
+.bizzco-stats:before {
+  content: "\e933";
+}
+.bizzco-tags:before {
+  content: "\e934";
+}
+.bizzco-target2:before {
+  content: "\e935";
+}
+.bizzco-targeting:before {
+  content: "\e936";
+}
+.bizzco-translation:before {
+  content: "\e937";
+}
+.bizzco-typewriter:before {
+  content: "\e938";
+}
+.bizzco-video:before {
+  content: "\e939";
+}
+.bizzco-viral-marketing:before {
+  content: "\e93a";
+}
+.bizzco-employee-3:before {
+  content: "\e93b";
+}
+.bizzco-employee-2:before {
+  content: "\e93c";
+}
+.bizzco-employee-1:before {
+  content: "\e93d";
+}
+.bizzco-employee:before {
+  content: "\e93e";
+}
+.bizzco-event:before {
+  content: "\e93f";
+}
+.bizzco-puzzle:before {
+  content: "\e940";
+}
+.bizzco-computer-1:before {
+  content: "\e941";
+}
+.bizzco-browser-1:before {
+  content: "\e942";
+}
+.bizzco-smartphone-1:before {
+  content: "\e943";
+}
+.bizzco-smartphone:before {
+  content: "\e944";
+}
+.bizzco-networking-1:before {
+  content: "\e945";
+}
+.bizzco-rocket-1:before {
+  content: "\e946";
+}
+.bizzco-laptop:before {
+  content: "\e947";
+}
+.bizzco-briefcase:before {
+  content: "\e948";
+}
+.bizzco-time-management:before {
+  content: "\e949";
+}
+.bizzco-package:before {
+  content: "\e94a";
+}
+.bizzco-target1:before {
+  content: "\e94b";
+}
+.bizzco-clipboard-1:before {
+  content: "\e94c";
+}
+.bizzco-clipboard:before {
+  content: "\e94d";
+}
+.bizzco-hourglass:before {
+  content: "\e94e";
+}
+.bizzco-folder:before {
+  content: "\e94f";
+}
+.bizzco-growth-4:before {
+  content: "\e950";
+}
+.bizzco-growth-3:before {
+  content: "\e951";
+}
+.bizzco-growth-2:before {
+  content: "\e952";
+}
+.bizzco-compass:before {
+  content: "\e953";
+}
+.bizzco-wallet:before {
+  content: "\e954";
+}
+.bizzco-growth-1:before {
+  content: "\e955";
+}
+.bizzco-vision:before {
+  content: "\e956";
+}
+.bizzco-presentation:before {
+  content: "\e957";
+}
+.bizzco-computer:before {
+  content: "\e958";
+}
+.bizzco-clock:before {
+  content: "\e959";
+}
+.bizzco-binoculars:before {
+  content: "\e95a";
+}
+.bizzco-growth:before {
+  content: "\e95b";
+}
+.bizzco-money-bag:before {
+  content: "\e95c";
+}
+.bizzco-trophy:before {
+  content: "\e95d";
+}
+.bizzco-megaphone:before {
+  content: "\e95e";
+}
+.bizzco-browser:before {
+  content: "\e95f";
+}
+.bizzco-innovation-1:before {
+  content: "\e960";
+}
+.bizzco-search:before {
+  content: "\e961";
+}
+.bizzco-idea1:before {
+  content: "\e962";
+}
+.bizzco-innovation:before {
+  content: "\e963";
+}
+.bizzco-chat-bubble:before {
+  content: "\e964";
+}
+.bizzco-line-chart:before {
+  content: "\e965";
+}
+.bizzco-calculator:before {
+  content: "\e966";
+}
+.bizzco-money:before {
+  content: "\e967";
+}
+.bizzco-mountain:before {
+  content: "\e968";
+}
+.bizzco-loss:before {
+  content: "\e969";
+}
+.bizzco-increase:before {
+  content: "\e96a";
+}
+.bizzco-networking:before {
+  content: "\e96b";
+}
+.bizzco-rocket:before {
+  content: "\e96c";
+}
+.bizzco-apartment:before {
+  content: "\e96d";
+}
+.bizzco-apartment-1:before {
+  content: "\e96e";
+}
+.bizzco-apartment-2:before {
+  content: "\e96f";
+}
+.bizzco-apartment-3:before {
+  content: "\e970";
+}
+.bizzco-apartment-4:before {
+  content: "\e971";
+}
+.bizzco-apartment-5:before {
+  content: "\e972";
+}
+.bizzco-apartment-6:before {
+  content: "\e973";
+}
+.bizzco-apartment-7:before {
+  content: "\e974";
+}
+.bizzco-appartment:before {
+  content: "\e975";
+}
+.bizzco-blueprint:before {
+  content: "\e976";
+}
+.bizzco-cityscape:before {
+  content: "\e977";
+}
+.bizzco-elevator:before {
+  content: "\e978";
+}
+.bizzco-house:before {
+  content: "\e979";
+}
+.bizzco-house-1:before {
+  content: "\e97a";
+}
+.bizzco-house-2:before {
+  content: "\e97b";
+}
+.bizzco-house-3:before {
+  content: "\e97c";
+}
+.bizzco-house-4:before {
+  content: "\e97d";
+}
+.bizzco-house-5:before {
+  content: "\e97e";
+}
+.bizzco-house-key:before {
+  content: "\e97f";
+}
+.bizzco-house-key-1:before {
+  content: "\e980";
+}
+.bizzco-house-key-2:before {
+  content: "\e981";
+}
+.bizzco-laptop1:before {
+  content: "\e982";
+}
+.bizzco-laptop-1:before {
+  content: "\e983";
+}
+.bizzco-mortgage:before {
+  content: "\e984";
+}
+.bizzco-mortgage-1:before {
+  content: "\e985";
+}
+.bizzco-mortgage-2:before {
+  content: "\e986";
+}
+.bizzco-mortgage-3:before {
+  content: "\e987";
+}
+.bizzco-mortgage-4:before {
+  content: "\e988";
+}
+.bizzco-placeholder:before {
+  content: "\e989";
+}
+.bizzco-real-estate:before {
+  content: "\e98a";
+}
+.bizzco-real-estate-1:before {
+  content: "\e98b";
+}
+.bizzco-real-estate-2:before {
+  content: "\e98c";
+}
+.bizzco-real-estate-3:before {
+  content: "\e98d";
+}
+.bizzco-real-estate-4:before {
+  content: "\e98e";
+}
+.bizzco-real-estate-5:before {
+  content: "\e98f";
+}
+.bizzco-search1:before {
+  content: "\e990";
+}
+.bizzco-skyscraper:before {
+  content: "\e991";
+}
+.bizzco-skyscraper-1:before {
+  content: "\e992";
+}
+.bizzco-skyscraper-2:before {
+  content: "\e993";
+}
+.bizzco-skyscraper-3:before {
+  content: "\e994";
+}
+.bizzco-love:before {
+  content: "\e900";
+}
+.bizzco-network:before {
+  content: "\e901";
+}
+.bizzco-respect:before {
+  content: "\e902";
+}
+.bizzco-call:before {
+  content: "\e903";
+}
+.bizzco-home:before {
+  content: "\e904";
+}
+.bizzco-note:before {
+  content: "\e905";
+}
+.bizzco-plane:before {
+  content: "\e906";
+}
+.bizzco-plus-1:before {
+  content: "\e907";
+}
+.bizzco-target:before {
+  content: "\e908";
+}
+.bizzco-light-2:before {
+  content: "\f113";
+}
+.bizzco-idea:before {
+  content: "\f110";
+}
+.bizzco-next:before {
+  content: "\f13b";
+}
+.bizzco-uniF10D:before {
+  content: "\f10d";
+}
+.bizzco-light:before {
+  content: "\f112";
+}
+.bizzco-layer:before {
+  content: "\f108";
+}
+.bizzco-note-2:before {
+  content: "\f136";
+}

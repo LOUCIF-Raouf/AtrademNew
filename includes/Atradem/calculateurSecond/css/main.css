@@ -1,0 +1,80 @@
+.articleGroup {
+    display: flex;
+    flex-flow: row wrap;
+    max-width: 75%;
+}
+
+.article {
+    border: 1px solid black;
+    width: 18%;
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+}
+
+.article img {
+    width: 40%;
+}
+
+.article h3 {
+    font-size: 1.2rem;
+}
+
+.article div {
+    display: flex;
+    justify-content: center;
+}
+
+.article button {
+    position: relative;
+    bottom: 5px;
+}
+
+#recap {
+    top: 45px;
+    right: 0;
+    width: 25%;
+    position: fixed;
+    text-align: center;
+    border-left: 1px black solid;
+    height: 100%;
+    overflow: scroll;
+}
+
+#clearCart {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* #recap table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    text-align: center;
+}
+
+#recap table td {
+    border: 1px black solid;
+    padding: 7px 11px;
+    text-transform: capitalize;
+}
+
+#recap table p {
+    margin: 0;
+} */
+
+/* #recap table button {
+    font-size: 1.5rem;
+    background: transparent;
+    border: 1px solid black;
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    transition: all 0.5s;
+}
+
+#recap table button:hover {
+    background: black;
+    color: white;
+    border: none;
+} */

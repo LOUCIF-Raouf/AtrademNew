@@ -1,0 +1,92 @@
+<div class="col-md-8">
+
+    <ul class="nav nav-tabs justify-content-center" id="myTab" role="tablist">
+        <li class="nav_item"><a role="tab" data-toggle="tab" id="salon-tab" href="#salon" class="nav-link active">Salon</a></li>
+        <li class="nav-item"><a role="tab" data-toggle="tab" id="chambre-tab" href="#chambre" class="nav-link">Chambre</a></li>
+        <li class="nav-item"><a role="tab" data-toggle="tab" id="cuisine-tab" href="#cuisine" class="nav-link">Cuisine</a></li>
+        <li class="nav-item"><a role="tab" data-toggle="tab" id="bureau-tab" href="#bureau" class="nav-link">Bureau</a></li>
+        <li class="nav-item"><a role="tab" data-toggle="tab" id="sdn-tab" href="#sdn" class="nav-link">Salle de bain</a></li>
+        <li class="nav-item"><a role="tab" data-toggle="tab" id="autre-tab" href="#autre" class="nav-link">Autre</a></li>
+    </ul>
+
+
+      <!-- Tab panes -->
+    <div class="tab-content">
+        <div class="tab-pane active" id="salon" role="tabpanel" aria-labelledby="salon-tab">
+            <div class="articleGroup">
+                <?php foreach ($salon as $objet): ?>
+                    <div class="article">
+                        <h3><?=$objet['name_m']?></h3>
+                        <button data-article="<?=$objet['name_m']?>" data-price="<?=$objet['mcube_m'] * 30?>" class="btn btn-outline-secondary">Ajouter</button>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <div class="tab-pane" id="chambre" role="tabpanel" aria-labelledby="chambre-tab">
+            <div class="articleGroup">
+                <?php foreach ($chambre as $objet): ?>
+                    <div class="article">
+                        <h3><?=$objet['name_m']?></h3>
+                        <button data-article="<?=$objet['name_m']?>" data-price="<?=$objet['mcube_m'] * 30?>" class="btn btn-outline-secondary">Ajouter</button>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <div class="tab-pane" id="cuisine" role="tabpanel" aria-labelledby="cuisine-tab">
+        <div class="articleGroup">
+                <?php foreach ($cuisine as $objet): ?>
+                    <div class="article">
+                        <h3><?=$objet['name_m']?></h3>
+                        <button data-article="<?=$objet['name_m']?>" data-price="<?=$objet['mcube_m'] * 30?>" class="btn btn-outline-secondary">Ajouter</button>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <div class="tab-pane" id="bureau" role="tabpanel" aria-labelledby="bureau-tab">
+        <div class="articleGroup">
+                <?php foreach ($bureau as $objet): ?>
+                    <div class="article">
+                        <h3><?=$objet['name_m']?></h3>
+                        <button data-article="<?=$objet['name_m']?>" data-price="<?=$objet['mcube_m'] * 30?>" class="btn btn-outline-secondary">Ajouter</button>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <div class="tab-pane" id="sdb" role="tabpanel" aria-labelledby="sdb-tab">
+        <div class="articleGroup">
+                <?php foreach ($sdb as $objet): ?>
+                    <div class="article">
+                        <h3><?=$objet['name_m']?></h3>
+                        <button data-article="<?=$objet['name_m']?>" data-price="<?=$objet['mcube_m'] * 30?>" class="btn btn-outline-secondary">Ajouter</button>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+        <div class="tab-pane" id="autres" role="tabpanel" aria-labelledby="autres-tab">
+        <div class="articleGroup">
+                <?php foreach ($autres as $objet): ?>
+                    <div class="article">
+                        <h3><?=$objet['name_m']?></h3>
+                        <button data-article="<?=$objet['name_m']?>" data-price="<?=$objet['mcube_m'] * 30?>" class="btn btn-outline-secondary">Ajouter</button>
+                    </div>
+                <?php endforeach;?>
+            </div>
+        </div>
+    </div>
+
+    <!-- <div id="recap">
+        <h3>Sélectionnés</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Quantités</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="recapTable">
+
+            </tbody>
+        </table>
+    </div> -->
+</div>

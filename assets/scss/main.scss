@@ -1,0 +1,435 @@
+$purple: #512da8;
+
+.purple {
+    color: $purple;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #171619 !important
+}
+
+table {
+    width: 100% !important;
+}
+
+#main-nav {
+    ul {
+        li {
+            a {
+                font-size: 1.2em;
+            }
+        }
+    }
+}
+
+header {
+    .cbr-button {
+        font-size: 1em;
+    }
+}
+
+.fs-2 {
+    font-size: 0.6em;
+}
+
+.bg-purple {
+    background-color: #5447a9;
+}
+
+.modal-header {
+    .modal-close {
+        float: right !important;
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1;
+        top: 0;
+        position: absolute !important;
+        right: 0;
+        height: 36px;
+        width: 36px;
+        background-color: #313a46;
+        opacity: 1;
+        border: 2px solid #ffffff;
+        text-shadow: none;
+        color: #ffffff !important;
+        border-radius: 50%;
+        padding: 0;
+
+        &:hover {
+            color: #000000 !important;
+        }
+
+        &::after {
+            z-index: -1;
+        }
+    }
+}
+
+.modal-body {
+    .wpcf7-form-control {
+        margin-bottom: 20px !important;
+    }
+}
+
+.slideform-group,
+.slideform-track,
+.slideform-wrapper,
+.slideform-slide {
+    /* width: 100%; */
+    height: 100vh;
+    overflow: visible;
+    z-index: 1001;
+}
+
+.form-group {
+    margin-bottom: 5px !important;
+}
+
+.slideform-group {
+    /* form {
+        div {
+            .row {
+                margin-bottom: 5px;
+
+            }
+        }
+    } */
+
+    overflow: auto;
+    width: 100%;
+
+    span {
+        margin-bottom: 5px;
+    }
+
+    form.slideform-form input {
+        height: 40px !important;
+        font-size: 1em !important;
+    }
+
+    textarea {
+        height: 60px !important;
+        font-size: 1em !important;
+    }
+}
+
+.slideform-slide {
+    display: none !important;
+}
+
+.slideform-slide.active {
+    display: flex !important;
+    height: 100% !important;
+    width: 100% !important;
+}
+
+form.slideform-form .slideform-btn {
+    margin-top: 10px !important;
+}
+
+form.slideform-form .slideform-slide.active {
+    width: 100% !important;
+}
+
+#sidebar-menu .sticky-top {
+    /*  top: 10px */
+}
+
+.price-box {
+    bottom: 0;
+    position: absolute !important;
+    left: 0;
+    position: sticky;
+    z-index: 1020;
+}
+
+#calculator-container {
+    /* padding-left: 300px; */
+    width: 100%;
+    /* height: 100%; */
+    z-index: 0;
+}
+
+form.slideform-form .slideform-group {
+    /*  height: 90vh !important; */
+    max-height: 90vh;
+}
+
+.slideform-btn .slideform-btn-next {
+    position: fixed !important;
+    bottom: 30px !important;
+}
+
+.fixed-bottom {
+    /* bottom: 0;
+    position: sticky;
+    width: 100%;
+    z-index: 1020; */
+}
+
+.select2-selection .select2-selection--multiple {
+    margin-bottom: 0 !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    height: 30px;
+}
+
+.select2-container--default .select2-results__option[aria-selected='true'] {
+    display: none !important;
+}
+
+.input-group {
+    input {
+        width: 80% !important;
+    }
+}
+
+.content-page,
+#inner-content {
+    height: 100%;
+}
+
+.irs--sharp.irs-with-grid {
+    margin: 0 10px 0 10px;
+}
+
+/* #listObjMontage {
+    label {
+        transform: translateY(5px);
+    }
+}
+ */
+@import 'variables.scss';
+
+@import 'menu.scss';
+
+@import 'mm-vertical.scss';
+
+@import 'checkbox.scss';
+
+@import 'calculateur.scss';
+
+/* @import 'desbrasenplus.scss'; */
+
+.t-shirt {
+    .form-group {
+        margin-bottom: 30px !important;
+    }
+}
+
+.slideform-form {
+    h2 {
+
+        font-weight: 800;
+    }
+}
+
+.form-group {
+    label {
+        color: rgb(87, 87, 87);
+    }
+}
+
+.slideform-footer {
+    margin-left: 300px !important;
+    border: none !important;
+}
+
+.slide-title {
+    margin-bottom: 40px !important;
+    font-weight: bold;
+}
+
+/* .carton-card {
+    border: 1px solid $muted;
+    border-radius: 30px;
+    height: 40vh;
+    padding: 10px;
+
+} */
+
+.assurance-card {
+    box-shadow: -4px 4px 0 0 rgba($purple, 0.3);
+    border: 3px solid $purple;
+    /*  &:nth-child(1)::after {
+    content: '\276F';
+    top: 50%;
+    right: 0;
+    position: absolute;
+    font-size: 3rem;
+    width: 10px;
+    height: 10px;
+    padding: 20px;
+    background-color: rgba($color: #868686, $alpha: 0.3);
+    border-radius: 50%;
+    border: 1px solid $dark;
+  } */
+    /* filter: blur(5px);
+
+    &:hover,
+    &:focus,
+    &:active {
+        filter: none;
+    } */
+
+    p {
+        font-size: 1.2rem;
+        width: 100%;
+        color: $muted;
+        text-align: center;
+    }
+}
+
+
+.information-assurance {
+    span {
+        font-size: 2rem;
+    }
+}
+
+.valeur-assurance {
+    font-size: 3.2em;
+    /* max-width: 200px; */
+}
+
+.title-assurance {
+    color: #272063;
+    margin-bottom: 30px;
+}
+
+.valeur-assurance {
+    /*  padding-left: 0; */
+}
+
+/* .carton-card {
+    margin-left: 10px;
+    margin-right: 10px;
+} */
+
+.cas-pratique {
+    border-radius: 3.25rem !important;
+    height: 50% !important;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: -4px 4px 0 0 rgba($purple, 0.3);
+    border: 3px solid $purple;
+}
+
+#sideCol {
+    position: sticky;
+    top: 50px;
+    height: 50%;
+}
+
+.opt {
+    margin-bottom: 30px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.box_duree {
+    height: 30vh;
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: -4px 4px 0 0 rgba($purple, 0.3);
+    border: 3px solid $purple;
+}
+
+.list-materiel-2 {
+    border: 1px solid $purple;
+    height: 35vh;
+    min-height: 50vh;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+
+.details-shop-description {
+    padding: 1rem;
+}
+
+/* DESBRASENPLUS */
+
+.form-group .minus,
+.form-group .plus {
+    color: $purple;
+    display: block;
+    float: left;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    transition: background-color .2s linear;
+}
+
+.form-group .qty {
+    width: 30% !important;
+}
+
+.add-panier-2 .form-group {
+    display: flex;
+}
+
+#add_materiel_details {
+    display: flex;
+    flex-direction: row;
+    /*     position: relative;
+    bottom: -210px; */
+}
+
+.check-circle li:before {
+    font-size: 12px;
+    margin-right: 10px;
+    font-family: 'Font Awesome 5 Free';
+    top: 0;
+    left: -5px;
+    color: $purple;
+    content: "\f111";
+}
+
+.checkbox-estimateur label input[type=checkbox]+.cr>.cr-icon,
+.checkbox-no-camion label input[type=checkbox]+.cr>.cr-icon,
+.radio label input[type=radio]+.cr>.cr-icon {
+    transform: scale(3) rotateZ(-20deg);
+    opacity: 0;
+    transition: all .3s ease-in;
+}
+
+.row_border_livraison,
+.border-gris-livraison {
+    min-height: 80px;
+    border: 3px solid #ececec;
+    padding-top: 1rem;
+}
+
+.radio label::before,
+.radio label::after,
+.checkbox label::before,
+.checkbox label::after {
+    transform: translateY(5px) !important;
+}
+
+.cart-subtotal {
+    transform: translateX(-145px) !important;
+}
+
+.radio.radio-single label {
+    transform: translateY(-10px);
+}
+
+.radio-success input[type="radio"]:checked+label::after {}
+
+.radio-success input[type="radio"]+label::after {
+    display: none;
+
+}
