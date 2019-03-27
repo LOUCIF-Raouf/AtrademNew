@@ -4,7 +4,7 @@ var isWK = false;
 var calendar = new HelloWeek({
     selector: '.hello-week',
     lang: 'fr',
-    langFolder: 'http://localhost:8888/AtrademNew/bizzco/includes/Atradem/calendarPicker/lib/langs/',
+    langFolder: './includes/Atradem/calendarPicker/lib/langs/',
     format: 'dd/mm/yyyy',
     weekShort: true,
     monthShort: false,
@@ -38,13 +38,6 @@ var calendar = new HelloWeek({
     }
 });
 
-// function oui() {
-//     console.log(calendar.getDays());
-//     console.log(this);
-// }
-
-
-
 function display() {
 
     if (isWK == true) {
@@ -69,6 +62,7 @@ function display() {
         });
     }
 }
+
 $(document).on('click', 'div.day', (e) => {
     if (e.target.classList.contains('is-disabled')) {
         return;

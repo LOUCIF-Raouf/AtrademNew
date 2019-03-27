@@ -14,7 +14,7 @@
 
 
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-    <meta name="description" content="Bizzco is a perfect responsive template for creative agencies and business startup, web studio, and digital agencies.This theme will be 100% fluid responsive on any device. This template easily customizable, fully responsive and support all modern browser and device.">
+    <meta name="description" content="shit Bizzco is a perfect responsive template for creative agencies and business startup, web studio, and digital agencies.This theme will be 100% fluid responsive on any device. This template easily customizable, fully responsive and support all modern browser and device.">
     <meta name="keywords" content="agency, agency Portfolio, agency template, creative agency, creative business, creative multipurpose, creative Portfolio, creative html, digital, marketing agency, modern business, multipurpose, Portfolio showcase, professional website,">
     <meta name="author" content="https://themeforest.net/user/cbr-themes/Portfolio">
 

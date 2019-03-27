@@ -40,29 +40,11 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                    <td colspan='4'>Sous-total</td>
-                                    <td class='cart-subtotal'></td>
+                                   
                                 </tr>
                             </tfoot>
                         </table>
                     </li>
-                    <!-- <li class="">
-                        <a class="has-arrow" href="#" aria-expanded="false">
-                            Mobiliers
-                        </a>
-                        <ul class="" style="height: 0px;">
-                            <li>
-                                Objet 1
-                            </li>
-                            <li>
-                                Objet 2
-                            </li>
-                            <li>
-                                Objet 3
-                            </li>
-                        </ul>
-                    </li> -->
-
                 </ul>
 
                 <div class="price-box border-top bg-white">

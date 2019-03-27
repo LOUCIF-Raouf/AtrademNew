@@ -46,10 +46,12 @@
 
                       <!-- Cartons -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div class="slideform-group cartonButtonForm">
                           <?php include "./includes/pages/devis-inventaire/cartons.phtml";?>
                         </div>
                       </div>
+                      
+
 
                       <!-- Matériel -->
                       <div class="slideform-slide">
@@ -180,79 +182,80 @@
   });
 </script>
 
-  <script>
-    $(document).ready(function () {
+
+<script>
+  $(document).ready(function () {
 
 
-      $('#selectedObject').select2({
-        lang: "fr",
-        placeholder: 'Selectionnez un objet',
-        width: '80%', // need to override the changed default
-        /* ajax: {
-            url: "getData.php",
-            dataType: 'json',
-            quietMillis: 100,
-            data: function (term, page) {
-                return {
-                    term: term,
-                    page_limit: 10
-                };
-            },
-            results: function (data, page) {
-                return { results: data.results };
-            }
+    $('#selectedObject').select2({
+      lang: "fr",
+      placeholder: 'Selectionnez un objet',
+      width: '80%', // need to override the changed default
+      /* ajax: {
+          url: "getData.php",
+          dataType: 'json',
+          quietMillis: 100,
+          data: function (term, page) {
+              return {
+                  term: term,
+                  page_limit: 10
+              };
+          },
+          results: function (data, page) {
+              return { results: data.results };
+          }
 
-        },
-        initSelection: function(element, callback) {
-            return $.getJSON("getData.php?id=" + (element.val()), null, function(data) {
+      },
+      initSelection: function(element, callback) {
+          return $.getJSON("getData.php?id=" + (element.val()), null, function(data) {
 
-                    return callback(data);
+                  return callback(data);
 
-            });
-        }
- */
+          });
+      }
+*/
+  });
+
+
+  $('#selectedObject').val(null).trigger('change')
+
+    $(function () {
+      $('#menu1, #menu2').metisMenu();
     });
 
+    $('form').slideform();
 
-    $('#selectedObject').val(null).trigger('change')
-
-      $(function () {
-        $('#menu1, #menu2').metisMenu();
-      });
-
-      $('form').slideform();
-
-      /* $('#selectedObject').select2({
-        placeholder: 'Selectionnez un objet',
-      }); */
+    /* $('#selectedObject').select2({
+      placeholder: 'Selectionnez un objet',
+    }); */
 
 
-      $("#distHomeDep, #distAppartDep, #distHomeArr, #distAppartArr").ionRangeSlider({
-        grid: true,
-        min: 0,
-        max: 100,
-        from: 0,
-        step: 5,
-        max_postfix: "+",
-        skin: "sharp",
-        postfix: "m"
-      })
+    $("#distHomeDep, #distAppartDep, #distHomeArr, #distAppartArr").ionRangeSlider({
+      grid: true,
+      min: 0,
+      max: 100,
+      from: 0,
+      step: 5,
+      max_postfix: "+",
+      skin: "sharp",
+      postfix: "m"
+    })
 
 
-      $(".dial").knob({
-        min: 0,
-        max: 10,
-        width: 100,
-        height: 100,
-        linecap: "round",
-        fgColor: "#5447A9",
-        angleOffset: -125,
-        angleArc: 250,
-        rotation: "anticlockwise",
+    $(".dial").knob({
+      min: 0,
+      max: 10,
+      width: 100,
+      height: 100,
+      linecap: "round",
+      fgColor: "#5447A9",
+      angleOffset: -125,
+      angleArc: 250,
+      rotation: "anticlockwise",
 
-      });
     });
-  </script>
+  });
+</script>
 
 
   <?php include "./includes/footer_end.php";?>

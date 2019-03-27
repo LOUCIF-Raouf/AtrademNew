@@ -86,6 +86,7 @@ $(document).ready(function () {
         if (articleTab.length == 0) {
             price.innerHTML = 0;
         } else {
+            totalPrice =+ 90;
             articleTab.forEach(article => {
                 totalPrice = totalPrice + (parseFloat(article.price) * parseFloat(article.quantity));
             });
