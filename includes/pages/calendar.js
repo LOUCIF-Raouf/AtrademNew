@@ -1,6 +1,13 @@
 var dateSelect;
 var isWK = false;
 
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = [yyyy + '/' + mm + '/' + dd];
+
 var calendar = new HelloWeek({
     selector: '.hello-week',
     lang: 'fr',
@@ -13,7 +20,7 @@ var calendar = new HelloWeek({
     todayHighlight: true,
     disablePastDays: true,
     disabledDaysOfWeek: null,
-    disableDates: null,
+    disableDates: today,
     weekStart: 1, // week start on Monday
     daysHighlight: null,
     daysSelected: null,

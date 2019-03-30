@@ -303,8 +303,9 @@ $(document).ready(function () {
     var minus = document.getElementsByClassName('minus');
 
     for (var i = 0; i < plus.length; i++) {
-        plus[i].addEventListener("click", e => {
-            console.log(e.target.dataset.label);
+        plus[i].addEventListener("click", (e) => {
+            console.log(this);
+            console.log(e);
             Cart.addItem({
                 id: e.target.dataset.id,
                 price: e.target.dataset.price,
