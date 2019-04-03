@@ -203,7 +203,7 @@
                             </div><!-- .rev_slider_wrapper -->
 
 
-                            <div class="row-service">
+                            <div class="row-service my-5">
                                 <img src="assets/imgs/shape/shape-4.png" alt="Image" class="shape-image-1 wow fadeIn"
                                     data-wow-duration="0.3s" data-wow-delay="0.3s">
 
@@ -303,12 +303,8 @@
                                 </div><!-- .container -->
                             </div><!-- .row-service -->
 
-                            <div class="col-xs-12">
-                                <div class="cbr-spacer clearfix" data-desktop="140" data-mobi="70"
-                                    data-smobi="70"></div>
-                            </div><!-- .col-md-12 -->
 
-                            <div class="row-about clearfix">
+                            <div class="row-about spacer clearfix my-5">
                                 <div class="col-md-6 about-bg">
                                     <img src="assets/imgs/about-agency-1.png" alt="Image">
                                 </div>
@@ -382,7 +378,7 @@
                                 </div><!-- .container -->
                             </div><!-- .row-about -->
 
-                            <div class="row-what-we-do">
+                            <div class="row-what-we-do my-5">
                                 <img src="assets/imgs/shape/shape-6.png" alt="Image" class="shape-image-3 wow fadeIn"
                                     data-wow-duration="0.3s" data-wow-delay="0.3s">
 
@@ -517,7 +513,7 @@
                                 </div><!-- .container -->
                             </div><!-- .row-what-we-do -->
 
-                            <div class="row-testimonials">
+                            <div class="row-testimonials my-5">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -718,7 +714,7 @@
                                     data-smobi="70"></div>
                             </div><!-- .col-md-12 -->
 
-                            <div class="row-counter">
+                            <div class="row-counter my-5">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -830,7 +826,7 @@
                         </div><!-- .row-counter -->
 
 
-                        <div class="row-latest-news">
+                        <div class="row-latest-news my-5">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
@@ -1116,7 +1112,7 @@
                                 data-smobi="70"></div>
                         </div>
 
-                        <div class="row-newsletter wow fadeInUpSmall">
+                        <div class="row-newsletter wow fadeInUpSmall my-5">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">

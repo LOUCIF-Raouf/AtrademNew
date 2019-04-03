@@ -132,6 +132,8 @@
              */
             updateButtonsStatus($current);
 
+
+
             /*
              * We need to add the continue buttons via Javascript, so we don't bloat
              * the html file with this type of content, only referred to our work.
@@ -212,6 +214,8 @@
             $form.validate(data);
         }
 
+
+
         /*
          * Go to a Specific slide.
          */
@@ -250,18 +254,23 @@
             );*/
 
             // Let's set the active class.
+
             $slides
                 .eq(slide)
                 .addClass('active')
                 .siblings()
                 .removeClass('active');
 
+
             // Let's set the new max if available.
             $max = slide > $max ? slide : $max;
 
             // Let's update buttons status
             updateButtonsStatus(slide);
+            localStorage.setItem("step", slide);
         };
+
+
 
         /*
          * Going Forward to the next slide.
@@ -362,7 +371,7 @@
 
         function callFunction(name, args) {
             var fn = '$form.' + name + '()';
-            console.log(fn);
+            /* console.log(fn); */
             return eval(fn);
         }
 
@@ -377,5 +386,13 @@
         $form.on('goTo', function (event, slide) {
             $form.goTo(slide);
         });
+
+
+        $(document).ready(function () {
+            let step = localStorage.getItem("step");
+            $current = step;
+            $form.goTo(step);
+        });
+
     };
 })(jQuery);

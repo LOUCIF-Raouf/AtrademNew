@@ -4,6 +4,8 @@
 
 $leftbar-width : 300px;
 $leftbar-width-sm : 150px;
+$price-box-height: 115px;
+
 
 
 
@@ -626,6 +628,25 @@ body.enlarged.bg-transparent {
     margin-right: 15px;
     vertical-align: middle;
     width: 20px;
+}
+
+
+#sidebar-menu {
+    /*  top: 10px */
+    height: 100%;
+}
+
+.metismenu {
+    margin-bottom: $price-box-height;
+}
+
+.price-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1020;
+    width: $leftbar-width;
+    height: $price-box-height;
 }
 
 

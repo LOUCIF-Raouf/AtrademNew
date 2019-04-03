@@ -75,6 +75,7 @@ header {
     }
 }
 
+
 .slideform-group,
 .slideform-track,
 .slideform-wrapper,
@@ -135,17 +136,6 @@ form.slideform-form .slideform-slide.active {
     width: 100% !important;
 }
 
-#sidebar-menu .sticky-top {
-    /*  top: 10px */
-}
-
-.price-box {
-    bottom: 0;
-    position: absolute !important;
-    left: 0;
-    position: sticky;
-    z-index: 1020;
-}
 
 #calculator-container {
     /* padding-left: 300px; */
@@ -162,6 +152,10 @@ form.slideform-form .slideform-group {
 .slideform-btn .slideform-btn-next {
     position: fixed !important;
     bottom: 30px !important;
+}
+
+.cart_1 {
+    height: auto !important;
 }
 
 .fixed-bottom {
@@ -373,7 +367,7 @@ form.slideform-form .slideform-group {
 }
 
 .form-group .qty {
-    width: 30% !important;
+    width: 50% !important;
 }
 
 .add-panier-2 .form-group {
@@ -432,4 +426,13 @@ form.slideform-form .slideform-group {
 .radio-success input[type="radio"]+label::after {
     display: none;
 
+}
+
+#demi_journee_val {
+    display: none;
+}
+
+.spacer {
+    margin-top: 140px !important;
+    /* define margin as you see fit */
 }

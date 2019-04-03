@@ -7,7 +7,7 @@
         <strong></strong>
     </div>
 
-    <div class="col-md-12 d-flex mb-5">
+    <div class="col-md-12 d-flex justify-content-between mb-5">
         <div class="col-md-2 col-xs-2 hover-bloc-transport no-padding" id="hover-bloc-transport-1">
             <div class="div-bloc-transport bloc-transport-1 no-margin no-padding no-border no-box-shadow" id="bloc-transport-1">
                 <div class="picture ">
@@ -15,7 +15,7 @@
                         alt="" id="1">
                 </div>
                 <h2 class="text-center text-orange">1</h2>
-                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-1" data-price="19.90" data-id="radio-nb-demen" data-label="1 Déménageur"
+                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-1" data-price="0" data-hiddenprice="90" data-id="radio-nb-demen" data-label="Déménageur(s)" data-quantity="1"
                     value="1">
             </div>
         </div>
@@ -26,7 +26,7 @@
                         alt="" id="2">
                 </div>
                 <h2 class="text-center text-orange">2</h2>
-                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-2" data-price="19.90" data-id="radio-nb-demen" data-label="2 Déménageurs"
+                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-2" data-price="0" data-hiddenprice="90" data-id="radio-nb-demen" data-label="Déménageur(s)" data-quantity="2"
                     value="2">
             </div>
         </div>
@@ -37,7 +37,7 @@
                         alt="" id="3">
                 </div>
                 <h2 class="text-center text-orange">3</h2>
-                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-2" data-price="19.90" data-id="radio-nb-demen" data-label="2 Déménageurs"
+                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-3" data-price="0" data-hiddenprice="90" data-label="Déménageur(s)" data-quantity="3"
                     value="3">
             </div>
         </div>
@@ -48,30 +48,8 @@
                         alt="" id="4">
                 </div>
                 <h2 class="text-center text-orange">4</h2>
-                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-3" data-price="19.90" data-id="radio-nb-demen" data-label="3 Déménageurs"
-                    value="3">
-            </div>
-        </div>
-        <div class="col-md-2 col-xs-2 hover-bloc-transport-noselect no-padding" id="hover-bloc-transport-5">
-            <div class="div-bloc-transport bloc-transport-5 no-margin no-padding no-border no-box-shadow" id="bloc-transport-5">
-                <div class="picture ">
-                    <img src="" class="img-responsive choix-demenageur img-center"
-                        alt="" id="5">
-                </div>
-                <h2 class="text-center text-orange">5</h2>
-                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-5" data-price="19.90" data-id="radio-nb-demen" data-label="5 Déménageurs"
-                    value="5">
-            </div>
-        </div>
-        <div class="col-md-2 col-xs-2 hover-bloc-transport-noselect no-padding" id="hover-bloc-transport-6">
-            <div class="div-bloc-transport bloc-transport-6 no-margin no-padding no-border no-box-shadow" id="bloc-transport-6">
-                <div class="picture ">
-                    <img src="" class="img-responsive choix-demenageur img-center"
-                        alt="" id="6">
-                </div>
-                <h2 class="text-center text-orange">6</h2>
-                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-6" data-price="69.90" data-id="radio-nb-demen" data-label="6 Déménageur"
-                    value="6">
+                <input type="radio" name="nb-demenageurs" class="radio-nb-demen" id="radio-nb-demen-4" data-price="0" data-hiddenprice="90" data-label="Déménageur(s)" data-quantity="4"
+                    value="4">
             </div>
         </div>
     </div>
@@ -97,3 +75,9 @@
         <br clear="all">
     </div>
 </div>
+
+<script>
+    $('b').on('click', e => {
+    console.log(Cart.getFullItem('nbDéménageurs'))
+    })
+</script>

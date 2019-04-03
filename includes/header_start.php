@@ -23,7 +23,7 @@
 
     <!-- Plugins -->
     <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/metismenu.min.css"  />
+    <link rel="stylesheet" type="text/css" href="assets/css/metisMenu.min.css"  />
     <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
     <link rel="stylesheet" type="text/css" href="assets/css/animsition.css">
     <link rel="stylesheet" type="text/css" href="assets/css/magnific-popup.css">

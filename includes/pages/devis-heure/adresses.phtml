@@ -1,27 +1,39 @@
 <div class="col-md-12">
 
-    <form method="post" class="wpcf7-form" novalidate="novalidate">
+    <form method="post" class="wpcf7-form" novalidate >
+
         <div class="slide-title">
             <h2>Adresses du déménagement</h2>
         </div>
         <h5 class="heading font-size-30 mb-1">Départ</h5>
         <span class="form-group">
-            <input type="text" tabindex="1" id="addressDep" name="addressDep" value="" class="wpcf7-form-control"
-                placeholder="Adresse *">
+            <div id="locationField">
+                <input id="autocomplete"
+                    placeholder="Adresse *"
+                    onFocus="geolocate()"
+                    type="text"
+                    tabindex="1"
+                    name="addressDep"
+                    value=""
+                    class="wpcf7-form-control"
+                    readonly = "readonly"
+                    required
+                    />
+            </div>
         </span>
         <div class="row">
             <span class="form-group col-md-6">
-                <input type="number" tabindex="2" id="cpDep" name="cpDep" value="" class="wpcf7-form-control"
-                    placeholder="Code postal *">
+                <input type="text" tabindex="2" id="postal_code" name="cpDep" value="" class="wpcf7-form-control"
+                    placeholder="Code postal *" required>
             </span>
             <span class="form-group col-md-6">
-                <input type="text" tabindex="3" id="cityDep" name="cityDep" value="" class="wpcf7-form-control"
-                    placeholder="Ville *">
+                <input type="text" tabindex="3" id="locality" name="cityDep" value="" class="wpcf7-form-control"
+                    placeholder="Ville *" required>
             </span>
         </div>
         <div class="row">
             <span class="form-group col-md-6">
-                <select name="typeDep" id="typeDep" class="wpcf7-form-control">
+                <select name="typeDep" id="typeDep" class="wpcf7-form-control" required>
                     <option selected disabled>Type... *</option>
                     <option value="Appartement">Appartement</option>
                     <option value="Maison">Maison</option>
@@ -29,11 +41,10 @@
                 </select>
             </span>
 
-
             <span class="form-group col-md-6">
                 <div class="input-group">
                     <input type="number" tabindex="3" id="surfaceDep" name="surfaceDep" value="" class="wpcf7-form-control form-control"
-                        placeholder="Surface m³">
+                        placeholder="Surface m³" required>
                     <div class="input-group-append">
                         <span class="input-group-text mb-0">m³</span>
                     </div>
@@ -44,7 +55,7 @@
         <div data-condition="input.typeDep == 'Appartement'" class="col-12 p-0" style="display: none;">
             <div class="row">
                 <div class="options options-buttons col-6">
-                    <select name="etageAppDep" id="etageAscAppDep">
+                    <select name="etageAppDep" id="etageAscAppDep" required>
                         <option disabled selected value="" placeholder="">Etage</option>
                         <option value="RDC">RDC</option>
                         <option value="1">1</option>
@@ -71,14 +82,14 @@
                 </div>
 
                 <div class="options options-buttons col-6">
-                    <select name="ascAppDep" id="ascAppDep">
+                    <select name="ascAppDep" id="ascAppDep" required>
                         <option disabled selected value="" placeholder="">Ascenseur *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
                     </select>
 
                     <div data-condition="input.ascDep == 'yes'" style="display: none;">
-                        <select name="sizeAscAppDep" id="sizeAscAppDep">
+                        <select name="sizeAscAppDep" id="sizeAscAppDep" required>
                             <option disabled selected value="" placeholder="">Séléctionnez la place
                                 maximale</option>
                             <option value="1">1</option>
@@ -97,14 +108,14 @@
             <div class="row">
 
                 <div class="options options-buttons col-6">
-                    <select name="caveAppDep" id="caveAppDep">
+                    <select name="caveAppDep" id="caveAppDep" required>
                         <option disabled selected value="" placeholder="">Cave *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
                     </select>
                 </div>
                 <div class="options options-buttons col-6">
-                    <select name="monteAppDep" id="monteAppDep">
+                    <select name="monteAppDep" id="monteAppDep" required>
                         <option disabled selected value="" placeholder="">Monte-meuble *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
@@ -115,7 +126,7 @@
             <div class="row">
                 <div class="options options-buttons col-12">
                     <h3 class="mb-0 mt-2">Distance logement / rue</h3>
-                    <input id="distAppartDep" />
+                    <input id="distAppDep" required/>
                 </div>
             </div>
         </div>
@@ -124,7 +135,7 @@
             <div class="row">
 
                 <div class="options options-buttons col-6">
-                    <select name="sizeAscHomeDep" id="sizeAscHomeDep">
+                    <select name="sizeAscHomeDep" id="sizeAscHomeDep" required>
                         <option disabled selected value="" placeholder="">Etage</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -140,13 +151,13 @@
                 </div>
 
                 <div class="options options-buttons col-6">
-                    <select name="ascHomeDep" id="ascHomeDep">
+                    <select name="ascHomeDep" id="ascHomeDep" required>
                         <option disabled selected value="" placeholder="">Monte-meuble *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
                     </select>
 
-                    <div data-condition="input.ascDep == 'yes'" style="display: none;">
+                    <div data-condition="input.ascDep == 'yes'" style="display: none;" required>
                         <select name="sizeAscHomeDep" id="sizeAscHomeDep">
                             <option disabled selected value="" placeholder="">Séléctionnez la place
                                 maximale</option>
@@ -163,7 +174,7 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <select name="gardeHomeDep" id="gardeHomeDep">
+                    <select name="gardeHomeDep" id="gardeHomeDep" required>
                         <option disabled selected value="" placeholder="">Garde-meuble *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
@@ -175,7 +186,7 @@
                 <div class="col-md-12">
                     <div class="options options-buttons col-12">
                         <h3 class="mb-0 mt-2">Distance logement/rue</h3>
-                        <input id="distHomeDep" />
+                        <input id="distHomeDep" required />
                     </div>
                 </div>
             </div>
@@ -197,24 +208,40 @@
 
 
 
+
+
+
+
+
         <h5 class="heading font-size-30 mb-1 mt-3">Arrivée</h5>
         <span class="form-group">
-            <input type="text" tabindex="1" id="addressArr" name="addressArr" value="" class="wpcf7-form-control"
-                placeholder="Adresse *">
+            <div id="locationField">
+                <input id="autocomplete2"
+                    placeholder="Adresse *"
+                    onFocus="geolocate()"
+                    type="text"
+                    tabindex="1"
+                    name="addressArr"
+                    value=""
+                    class="wpcf7-form-control"
+                    readonly = "readonly"
+                    required
+                    />
+            </div>
         </span>
         <div class="row">
             <span class="form-group col-md-6">
-                <input type="number" tabindex="2" id="cpArr" name="cpArr" value="" class="wpcf7-form-control"
-                    placeholder="Code postal *">
+            <input type="text" tabindex="2" id="postal_code_2" name="cpArr" value="" class="wpcf7-form-control"
+                    placeholder="Code postal *" required>
             </span>
             <span class="form-group col-md-6">
-                <input type="text" tabindex="3" id="cityArr" name="cityArr" value="" class="wpcf7-form-control"
-                    placeholder="Ville *">
+            <input type="text" tabindex="3" id="locality_2" name="cityArr" value="" class="wpcf7-form-control"
+                    placeholder="Ville *" required>
             </span>
         </div>
         <div class="row">
             <span class="form-group col-md-6">
-                <select name="typeArr" id="typeArr" class="wpcf7-form-control">
+                <select name="typeArr" id="typeArr" class="wpcf7-form-control" required>
                     <option selected disabled>Type... *</option>
                     <option value="Appartement">Appartement</option>
                     <option value="Maison">Maison</option>
@@ -225,7 +252,7 @@
             <span class="form-group col-md-6">
                 <div class="input-group">
                     <input type="number" tabindex="3" id="surfaceArr" name="surfaceArr" value="" class="wpcf7-form-control form-control"
-                        placeholder="Surface m³">
+                        placeholder="Surface m³" required>
                     <div class="input-group-append">
                         <span class="input-group-text mb-0">m³</span>
                     </div>
@@ -235,7 +262,7 @@
         <div data-condition="input.typeArr == 'Appartement'" class="col-12 p-0" style="display: none;">
             <div class="row">
                 <div class="options options-buttons col-6 form-group">
-                    <select name="etageAppArr" id="etageAscAppArr">
+                    <select name="etageAppArr" id="etageAscAppArr" required>
                         <option disabled selected value="" placeholder="">Etage</option>
                         <option value="RDC">RDC</option>
                         <option value="1">1</option>
@@ -262,14 +289,14 @@
                 </div>
 
                 <div class="options options-buttons col-6 form-group">
-                    <select name="ascAppArr" id="ascAppArr">
+                    <select name="ascAppArr" id="ascAppArr" required>
                         <option disabled selected value="" placeholder="">Ascenseur *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
                     </select>
 
                     <div data-condition="input.ascArr == 'yes'" style="display: none;">
-                        <select name="sizeAscAppArr" id="sizeAscAppArr">
+                        <select name="sizeAscAppArr" id="sizeAscAppArr" required>
                             <option disabled selected value="" placeholder="">Séléctionnez la place
                                 maximale</option>
                             <option value="1">1</option>
@@ -288,14 +315,14 @@
             <div class="row">
 
                 <div class="options options-buttons col-6 form-group">
-                    <select name="caveAppArr" id="caveAppArr">
+                    <select name="caveAppArr" id="caveAppArr" required>
                         <option disabled selected value="" placeholder="">Cave *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
                     </select>
                 </div>
                 <div class="options options-buttons col-6 form-group">
-                    <select name="monteAppArr" id="monteAppArr">
+                    <select name="monteAppArr" id="monteAppArr" required>
                         <option disabled selected value="" placeholder="">Monte-meuble *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
@@ -304,9 +331,9 @@
             </div>
 
             <div class="row">
-                <div class="options options-buttons col-12">
+                <div class="options options-buttons col-12" >
                     <h3 class="mb-0 mt-2">Distance logement / rue</h3>
-                    <input id="distAppartArr" />
+                    <input id="distAppArr" required/>
                 </div>
             </div>
         </div>
@@ -315,7 +342,7 @@
             <div class="row">
 
                 <div class="options options-buttons col-6">
-                    <select name="sizeAscHomeArr" id="sizeAscHomeArr">
+                    <select name="sizeAscHomeArr" id="sizeAscHomeArr" required>
                         <option disabled selected value="" placeholder="">Etage</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
@@ -331,14 +358,14 @@
                 </div>
 
                 <div class="options options-buttons col-6">
-                    <select name="ascHomeArr" id="ascHomeArr">
+                    <select name="ascHomeArr" id="ascHomeArr" required>
                         <option disabled selected value="" placeholder="">Monte-meuble *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
                     </select>
 
                     <div data-condition="input.ascArr == 'yes'" style="display: none;">
-                        <select name="sizeAscHomeArr" id="sizeAscHomeArr">
+                        <select name="sizeAscHomeArr" id="sizeAscHomeArr" required>
                             <option disabled selected value="" placeholder="">Séléctionnez la place
                                 maximale</option>
                             <option value="1">1</option>
@@ -354,7 +381,7 @@
             </div>
             <div class="row">
                 <div class="col-6">
-                    <select name="gardeHomeArr" id="gardeHomeArr">
+                    <select name="gardeHomeArr" id="gardeHomeArr" required>
                         <option disabled selected value="" placeholder="">Garde-meuble *</option>
                         <option value="yes">Oui</option>
                         <option value="no">Non</option>
@@ -366,20 +393,16 @@
                 <div class="col-md-12">
                     <div class="options options-buttons col-12">
                         <h3 class="mb-0 mt-2">Distance logement/rue</h3>
-                        <input id="distHomeArr" />
+                        <input id="distHomeArr" required />
                     </div>
                 </div>
             </div>
 
         </div>
 
-
         <div data-condition="input.typeArr == 'yes' &amp;&amp;  input.group6 == 'yes'" style="display: none;">
             <p>This message appears after all conditions have been marked as "yes".</p>
         </div>
-
-
-
 
 
         <span class="form-group">
@@ -387,3 +410,49 @@
         </span>
     </form>
 </div>
+
+<script>
+
+var OKButton;
+        setTimeout(() => {
+                OKButton = $('.adressesButtonForm .slideform-btn-next')[0];
+                OKButton.addEventListener('click', () => {
+                    localStorage.removeItem('carton-items');
+
+                    let tab = [];
+                });
+        }, 2000);
+
+
+   /*  $(function() {
+
+        $( ".slideform-btn" ).submit(function( event ) {
+        if ( $( "input:first" ).val() === "correct" ) {
+            $( "span" ).text( "Validated..." ).show();
+            return;
+        }
+        });
+
+        $('').on('click', () => {
+
+        });
+
+            $('input[name="addressDep"]').on('click', () => {
+                document.getElementById('autocomplete').readOnly = false;
+            });
+
+            $('input[name="addressDep"]').on('blur', () => {
+                document.getElementById('autocomplete').readOnly = true;
+            });
+
+            $('input[name="addressArr"]').on('click', () => {
+                document.getElementById('autocomplete2').readOnly = false;
+            });
+
+            $('input[name="addressArr"]').on('blur', () => {
+                document.getElementById('autocomplete2').readOnly = true;
+            });
+
+    }); */
+
+</script>

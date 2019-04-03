@@ -6,7 +6,7 @@
 // <script
 // src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
 
-var placeSearch, autocomplete, autocomplete2;
+var placeSearch, autocomplete, autocomplete2, myLatlng;
 
 var componentForm = {
     /* street_number: 'short_name',
@@ -41,19 +41,30 @@ var frBounds = {
 };
 
 
+
 function initAutocomplete() {
     // Create the autocomplete object, restricting the search predictions to
     // geographical location types.
+    var defaultBounds = new google.maps.LatLngBounds(
+        new google.maps.LatLng(40.518, 29.215),
+        new google.maps.LatLng(41.242, 30.370));
     autocomplete = new google.maps.places.Autocomplete(
         document.getElementById('autocomplete'), {
+            location: myLatlng,
+            radius: 1500, // (in meters; this is 150Km)
             types: ['geocode'],
-            componentRestrictions: countryRestrict
+            componentRestrictions: countryRestrict,
+            strictbounds: true,
         });
 
     autocomplete2 = new google.maps.places.Autocomplete(
         document.getElementById('autocomplete2'), {
+            location: myLatlng,
+            radius: 150000, // (in meters; this is 150Km)
             types: ['geocode'],
-            componentRestrictions: countryRestrict
+            componentRestrictions: countryRestrict,
+            strictbounds: true,
+
         });
     // Avoid paying for data that you don't need by restricting the set of
     // place fields that are returned to just the address components.
@@ -150,7 +161,10 @@ function callback(response, status) {
             var distance = response.rows[0].elements[0].distance;
             if (distance) {
                 var distance_in_kilo = distance.value / 1000; // the kilom
-                console.log(distance, distance_in_kilo);
+                distance_in_kilo = Math.round(distance_in_kilo * 100) / 100;
+                console.log(Math.round(distance_in_kilo));
+
+                // console.log(distance_in_kilo.replace('.', ","));
                 // $('#in_kilo').text(distance_in_kilo.toFixed(2));
                 // $('#from').text(origin);
                 // $('#to').text(destination);
@@ -165,7 +179,7 @@ function callback(response, status) {
                     });
                     Cart.addItem({
                         id: "adressesDem",
-                        price: distance_in_kilo,
+                        price: 2,
                         label: "Nb de Kilomètres",
                         quantity: distance_in_kilo,
                         departure: $('#autocomplete').val(),
@@ -182,7 +196,7 @@ function callback(response, status) {
                     });
                     Cart.addItem({
                         id: "adressesDem",
-                        price: distance_in_kilo,
+                        price: 1,
                         label: "Nb de Kilomètres",
                         quantity: distance_in_kilo,
                         departure: $('#autocomplete').val(),

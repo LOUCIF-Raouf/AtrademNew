@@ -91,7 +91,7 @@
 
                       <!-- Adresses déménagement -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div class="slideform-group adressesButtonForm">
                           <?php include "./includes/pages/devis-heure/adresses.phtml";?>
                         </div>
                       </div>
@@ -154,7 +154,6 @@
   <script src="assets/js/owl.carousel.min.js"></script>
   <script src="assets/js/magnific.popup.min.js"></script>
   <script src="assets/js/jquery.hoverdir.js"></script>
-  <script src="assets/js/metisMenu.min.js"></script>
   <script src="assets/js/jquery.slimscroll.js"></script>
   <script src="assets/js/typed.min.js"></script>
   <script src="assets/js/jquery.timepicker.min.js"></script>
@@ -232,7 +231,7 @@
       }); */
 
 
-      $("#distHomeDep, #distAppartDep, #distHomeArr, #distAppartArr").ionRangeSlider({
+      $("#distHomeDep, #distAppDep, #distHomeArr, #distAppArr").ionRangeSlider({
         grid: true,
         min: 0,
         max: 100,

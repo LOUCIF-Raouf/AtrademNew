@@ -8,7 +8,7 @@
         <strong></strong>
     </div>
 
-    <div class="row col-md-12 col-xs-12">
+    <div class="row col-md-12 col-xs-12 d-flex justify-content-between">
         <div class="col-md-4 col-xs-12 no-padding hover-bloc-transport-noselect" id="hover-bloc-transport-1">
             <div class="div-bloc-transport bloc-transport-1 no-margin no-padding no-border no-box-shadow" id="bloc-transport-1"
                 style="box-shadow:none;">
@@ -16,7 +16,7 @@
                     <img src="" class="img-responsive img-center" alt="">
                 </div>
                 <h2 class="text-center text-orange">12m<sup>3</sup></h2>
-                <input type="radio" name="taille-camion" class="radio-taille-camion" id="radio-taille-camion-12" data-price="19.90" data-id="radio-taille-camion" data-label="Camion 12m³"
+                <input type="radio" name="taille-camion" class="radio-taille-camion" id="radio-taille-camion-12" data-price="0" data-hiddenprice="100" data-id="radio-taille-camion" data-label="Camion 12m³"
                     value="5">
             </div>
         </div>
@@ -27,7 +27,7 @@
                     <img src="" class="img-responsive img-center" alt="">
                 </div>
                 <h2 class="text-center text-orange">22m<sup>3</sup></h2>
-                <input type="radio" name="taille-camion" class="radio-taille-camion" id="radio-taille-camion-22" data-price="19.90" data-id="radio-taille-camion" data-label="Camion 22m³"
+                <input type="radio" name="taille-camion" class="radio-taille-camion" id="radio-taille-camion-22" data-price="0" data-hiddenprice="160" data-id="radio-taille-camion" data-label="Camion 22m³"
                     value="5">
             </div>
         </div>
@@ -38,21 +38,18 @@
                     <img src="" class="img-responsive img-center" alt="">
                 </div>
                 <h2 class="text-center text-orange">40m<sup>3</sup></h2>
-                <input type="radio" name="taille-camion" class="radio-taille-camion" id="radio-taille-camion-40" data-price="19.90" data-id="radio-taille-camion" data-label="Camion 40m³"
+                <input type="radio" name="taille-camion" class="radio-taille-camion" id="radio-taille-camion-40" data-price="0" data-hiddenprice="320" data-id="radio-taille-camion" data-label="Camion 40m³"
                     value="5">
             </div>
         </div>
     </div>
-    <input type="hidden" id="camion" value="bloc-transport-2">
 </div>
 
-<div class="col-md-12 mb-5">
-    <div class="checkbox checkbox-success checkbox-circle border rounded py-3 mx-auto w-50">
-        <input id="checkbox-15" type="checkbox">
-        <label for="checkbox-15" class="font-size-15">
-            Je n'ai pas besoin de camion
-        </label>
-    </div>
+<div class="col-md-6 mx-auto mb-5 d-flex justify-content-around">
+        <div>
+            <input type="radio" name="taille-camion" class="radio-taille-camion-0" id="radio-taille-camion-0" data-id="radio-taille-camion" >
+            <label for="radio-taille-camion-0" class="ml-3"> Je n'ai pas besoin de camion</label>
+        </div>
 </div>
 
 <div class="row col-md-12 col-xs-12">
