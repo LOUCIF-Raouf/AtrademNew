@@ -1,9 +1,9 @@
 <?php
 
 try {
-    $dsn = "mysql:host=localhost;dbname=atrademNew";
+    $dsn = "mysql:host=localhost;dbname=atrademnew";
 
-    $pdo = new PDO($dsn, 'root', 'root', []);
+    $pdo = new PDO($dsn, 'root', '', []);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 

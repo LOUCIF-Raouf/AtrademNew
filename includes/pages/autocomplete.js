@@ -150,6 +150,7 @@ function callback(response, status) {
             var distance = response.rows[0].elements[0].distance;
             if (distance) {
                 var distance_in_kilo = distance.value / 1000; // the kilom
+                console.log(distance, distance_in_kilo);
                 // $('#in_kilo').text(distance_in_kilo.toFixed(2));
                 // $('#from').text(origin);
                 // $('#to').text(destination);
@@ -158,6 +159,10 @@ function callback(response, status) {
                         id: "adressesDem",
                         quantity: -1,
                     }); */
+                    Cart.addItem({
+                        id: "adressesDem",
+                        quantity: -Infinity,
+                    });
                     Cart.addItem({
                         id: "adressesDem",
                         price: distance_in_kilo,
@@ -171,6 +176,10 @@ function callback(response, status) {
                         id: "adressesDem",
                         quantity: -1,
                     }); */
+                    Cart.addItem({
+                        id: "adressesDem",
+                        quantity: -Infinity,
+                    });
                     Cart.addItem({
                         id: "adressesDem",
                         price: distance_in_kilo,

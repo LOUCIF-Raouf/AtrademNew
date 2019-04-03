@@ -1,10 +1,17 @@
 var dateSelect;
 var isWK = false;
 
+var today = new Date();
+var dd = String(today.getDate()).padStart(2, '0');
+var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+var yyyy = today.getFullYear();
+
+today = [yyyy + '/' + mm + '/' + dd];
+
 var calendar = new HelloWeek({
     selector: '.hello-week',
     lang: 'fr',
-    langFolder: 'http://localhost:8888/AtrademNew/bizzco/includes/Atradem/calendarPicker/lib/langs/',
+    langFolder: './includes/Atradem/calendarPicker/lib/langs/',
     format: 'dd/mm/yyyy',
     weekShort: true,
     monthShort: false,
@@ -13,7 +20,7 @@ var calendar = new HelloWeek({
     todayHighlight: true,
     disablePastDays: true,
     disabledDaysOfWeek: null,
-    disableDates: null,
+    disableDates: today,
     weekStart: 1, // week start on Monday
     daysHighlight: null,
     daysSelected: null,
@@ -37,13 +44,6 @@ var calendar = new HelloWeek({
         /** callback function */
     }
 });
-
-// function oui() {
-//     console.log(calendar.getDays());
-//     console.log(this);
-// }
-
-
 
 function display() {
 
@@ -69,6 +69,7 @@ function display() {
         });
     }
 }
+
 $(document).on('click', 'div.day', (e) => {
     if (e.target.classList.contains('is-disabled')) {
         return;
