@@ -64,3 +64,24 @@
     </div>
 
 </div>
+
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#garantiesForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                let label = Cart.getFullItem('garantie').label;
+                let id = Cart.getFullItem('garantie').id;
+                let uid = localStorage.getItem('uid');
+              if(!Cart.getItem("garantie")){
+                $("#garantieFailModal").modal("show");
+              }else{
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { label: label, id: id, uid: uid}
+                })
+
+              }
+            }); },2000);
+  </script>

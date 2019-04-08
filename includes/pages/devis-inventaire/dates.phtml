@@ -3,3 +3,15 @@
 </div>
 
 <div class="hello-week"></div>
+
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#dateForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                console.log('click',Cart.getItem("dateDem") )
+              if(!Cart.getItem("dateDem")){
+                $("#dateFailModal").modal("show");
+              }
+            }); },2000);
+  </script>

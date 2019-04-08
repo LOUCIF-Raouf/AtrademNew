@@ -23,8 +23,24 @@
     <div class="col-md-12">
         <div class="options options-buttons">
             <h4>Choisir l'option</h4>
-            <label for=""><input type="radio" name="radioAnnulation" id="radioAnnulationY" data-price="200" data-label="Assurance annulation"><span id="radioAnnulationYLabel">Oui</span></label>
+            <label for=""><input type="radio" name="radioAnnulation" id="radioAnnulationY" data-price="60" data-label="Assurance annulation"><span id="radioAnnulationYLabel">Oui</span></label>
             <label for=""><input type="radio" name="radioAnnulation" id="radioAnnulationN" data-price="0"><span id="radioAnnulationNLabel">Non</span></label>
         </div>
     </div>
 </div>
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#annulationForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                let qty = Cart.getFullItem('annulation').quantity;
+                let id = Cart.getFullItem('annulation').id;
+                let uid = localStorage.getItem('uid');
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { qty: qty, id: id, uid: uid}
+                })
+
+            }); },2000);
+  </script>

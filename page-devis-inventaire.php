@@ -5,8 +5,8 @@
 <link rel="stylesheet" href="./assets/css/sidebar.min.css">
 <link rel="stylesheet" href="./assets/css/slideform.css">
 <link rel="stylesheet" href="./assets/css/ion.rangeSlider.min.css" />
-<link rel="stylesheet" href="./assets/css/hello.week.min.css" >
-<link rel="stylesheet" href="./assets/css/hello.week.theme.min.css" >
+<link rel="stylesheet" href="./assets/css/hello.week.min.css">
+<link rel="stylesheet" href="./assets/css/hello.week.theme.min.css">
 
 
 <?php include './includes/header_end.php';?>
@@ -26,13 +26,19 @@
               <div class="wrapper">
 
                 <div id="calculator-container" class="col-md-12">
-                  <form action="">
+                  <form id="slideForm" action="">
 
                     <div class="slideform-wrapper">
 
-                    <!-- Inventaire -->
+                      <!-- Adresses déménagement -->
+                      <div class="d-none">
+                        <form method="post" class="wpcf7-form" novalidate>
+                        </form>
+                      </div>
+
+                      <!-- Inventaire -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="calcObjectForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/calculateur-objet.php";?>
                         </div>
                       </div>
@@ -46,11 +52,10 @@
 
                       <!-- Cartons -->
                       <div class="slideform-slide">
-                        <div class="slideform-group cartonButtonForm">
+                        <div class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/cartons.phtml";?>
                         </div>
                       </div>
-                      
 
 
                       <!-- Matériel -->
@@ -60,16 +65,23 @@
                         </div>
                       </div>
 
-                      <!-- Date déménagement -->
+                      <!-- Options -->
                       <div class="slideform-slide">
                         <div class="slideform-group">
+                          <?php include "./includes/pages/devis-inventaire/options.phtml";?>
+                        </div>
+                      </div>
+
+                      <!-- Date déménagement -->
+                      <div class="slideform-slide">
+                        <div id="dateForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/dates.phtml";?>
                         </div>
                       </div>
 
                       <!-- Garanties -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="garantiesForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/garanties.phtml";?>
                         </div>
                       </div>
@@ -83,7 +95,7 @@
 
                       <!-- Adresses déménagement -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="adressesForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/adresses.phtml";?>
                         </div>
                       </div>
@@ -136,6 +148,12 @@
     </div>
   </div>
 
+  <!------------------- MODALS --------------------->
+
+  <?php include "./includes/pages/devis-inventaire/modals.phtml";?>
+
+
+  <!------------------- SCRIPT --------------------->
   <script src="assets/js/jquery.validate.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/animsition.js"></script>
@@ -167,95 +185,95 @@
   <script src="includes/pages/form.js"></script>
 
   <script src="includes/pages/autocomplete.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh0bbCQWiYa5eGu3FB8GtiDQga2TH_fGE&libraries=places&callback=initAutocomplete"
-        async defer></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh0bbCQWiYa5eGu3FB8GtiDQga2TH_fGE&libraries=places&callback=initAutocomplete"
+    async defer></script>
 
 
   <script src="assets/js/shortcodes.js"></script>
   <script src="assets/js/main.js"></script>
 
-<script type="text/javascript" src="includes/pages/cart.js"></script>
-<script type="text/javascript">
-  $(function() {
-    Cart.currency = '';
-    Cart.initJQuery();
-  });
-</script>
-
-
-<script>
-  $(document).ready(function () {
-
-
-    $('#selectedObject').select2({
-      lang: "fr",
-      placeholder: 'Selectionnez un objet',
-      width: '80%', // need to override the changed default
-      /* ajax: {
-          url: "getData.php",
-          dataType: 'json',
-          quietMillis: 100,
-          data: function (term, page) {
-              return {
-                  term: term,
-                  page_limit: 10
-              };
-          },
-          results: function (data, page) {
-              return { results: data.results };
-          }
-
-      },
-      initSelection: function(element, callback) {
-          return $.getJSON("getData.php?id=" + (element.val()), null, function(data) {
-
-                  return callback(data);
-
-          });
-      }
-*/
-  });
-
-
-  $('#selectedObject').val(null).trigger('change')
-
+  <script type="text/javascript" src="includes/pages/cart.js"></script>
+  <script type="text/javascript">
     $(function () {
-      $('#menu1, #menu2').metisMenu();
+      Cart.currency = '';
+      Cart.initJQuery();
     });
-
-    $('form').slideform();
-
-    /* $('#selectedObject').select2({
-      placeholder: 'Selectionnez un objet',
-    }); */
+  </script>
 
 
-    $("#distHomeDep, #distAppartDep, #distHomeArr, #distAppartArr").ionRangeSlider({
-      grid: true,
-      min: 0,
-      max: 100,
-      from: 0,
-      step: 5,
-      max_postfix: "+",
-      skin: "sharp",
-      postfix: "m"
-    })
+  <script>
+    $(document).ready(function () {
 
 
-    $(".dial").knob({
-      min: 0,
-      max: 10,
-      width: 100,
-      height: 100,
-      linecap: "round",
-      fgColor: "#5447A9",
-      angleOffset: -125,
-      angleArc: 250,
-      rotation: "anticlockwise",
+      $('#selectedObject').select2({
+        lang: "fr",
+        placeholder: 'Selectionnez un objet',
+        width: '80%',
+      });
 
+
+      $('#selectedObject').val(null).trigger('change')
+
+      $(function () {
+        $('#menu1, #menu2').metisMenu();
+      });
+
+      $('form').slideform({
+        validate: {
+          rules: {
+              radioAnnulation: {
+                  required: true,
+              },
+          },
+          messages: {
+              radioAnnulation: {
+                  required: 'Veuillez choisir une option',
+              },
+          }
+      },
+      submit: function (event, form) {
+        console.log('forward');
+          $form.trigger('goForward');
+      }
+      });
+
+    /*  $('form').validate({
+        rules: {
+              radioAnnulation: {
+                  required: true,
+                  equals: "valid"
+              }
+          }
+      }) */
+
+
+      $("#distHomeDep, #distAppDep, #distHomeArr, #distAppArr").ionRangeSlider({
+        grid: true,
+        min: 0,
+        max: 100,
+        from: 0,
+        step: 5,
+        max_postfix: "+",
+        skin: "sharp",
+        postfix: "m"
+      })
+
+
+      $(".dial").knob({
+        min: 0,
+        max: 10,
+        width: 100,
+        height: 100,
+        linecap: "round",
+        fgColor: "#5447A9",
+        angleOffset: -125,
+        angleArc: 250,
+        rotation: "anticlockwise",
+
+      });
     });
-  });
-</script>
+  </script>
 
 
   <?php include "./includes/footer_end.php";?>

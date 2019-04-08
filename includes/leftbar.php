@@ -40,12 +40,13 @@
                             </tbody>
                             <tfoot>
                                 <tr>
-                                   
+
                                 </tr>
                             </tfoot>
                         </table>
                     </li>
                 </ul>
+
 
                 <div class="price-box border-top bg-white">
                     <h5 class="m-0 p-3 font-size-20">Cubage = <span id="size" class="cart-sizetotal"></span>m³</h5>
@@ -53,7 +54,6 @@
                     <button class="btn btn-outline-danger mb-1" id="clearCart">Vider mon panier</button>
                     <!-- <h5 class="m-0 pb-5 font-size-20">Cubage = <span id="price"></span>m³</h5> -->
                 </div>
-
             </div>
             <!-- Sidebar -->
 
