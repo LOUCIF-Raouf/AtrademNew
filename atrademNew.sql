@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 27, 2019 at 12:34 PM
+-- Generation Time: Apr 08, 2019 at 11:02 AM
 -- Server version: 5.7.23
 -- PHP Version: 7.2.10
 
@@ -19,6 +19,60 @@ SET time_zone = "+00:00";
 --
 -- Database: `atrademNew`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `devis`
+--
+
+CREATE TABLE `devis` (
+  `id` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `type_presta` varchar(255) NOT NULL,
+  `mobilier` json NOT NULL,
+  `nb_demen` int(1) NOT NULL,
+  `taille_camion` int(2) NOT NULL,
+  `duree_presta` varchar(255) NOT NULL,
+  `options` json NOT NULL,
+  `materiels` json NOT NULL,
+  `reception` varchar(255) NOT NULL,
+  `date` date NOT NULL,
+  `garantie` varchar(255) NOT NULL,
+  `annulation` varchar(255) NOT NULL,
+  `adresses_dep` varchar(255) NOT NULL,
+  `type_logement_dep` varchar(255) NOT NULL,
+  `surface_dep_dep` int(255) NOT NULL,
+  `etage_dep` int(2) NOT NULL,
+  `ascenseur_dep` tinyint(1) NOT NULL,
+  `taille_ascenseur_dep` int(1) NOT NULL,
+  `cave_dep` tinyint(1) NOT NULL,
+  `distance_dep` varchar(255) NOT NULL,
+  `commentaire_dep` text NOT NULL,
+  `adresses_arr` varchar(255) NOT NULL,
+  `type_logement_arr` varchar(255) NOT NULL,
+  `surface_dep_arr` int(255) NOT NULL,
+  `etage_arr` int(2) NOT NULL,
+  `ascenseur_arr` tinyint(1) NOT NULL,
+  `taille_ascenseur_arr` int(1) NOT NULL,
+  `cave_arr` tinyint(1) NOT NULL,
+  `distance_arr` varchar(255) NOT NULL DEFAULT '',
+  `commentaire_arr` text NOT NULL,
+  `status` varchar(255) NOT NULL,
+  `source` varchar(255) NOT NULL,
+  `nom` varchar(255) NOT NULL,
+  `prenom` varchar(255) NOT NULL,
+  `portable` int(11) NOT NULL,
+  `telephone` int(11) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `devis`
+--
+
+INSERT INTO `devis` (`id`, `uid`, `type_presta`, `mobilier`, `nb_demen`, `taille_camion`, `duree_presta`, `options`, `materiels`, `reception`, `date`, `garantie`, `annulation`, `adresses_dep`, `type_logement_dep`, `surface_dep_dep`, `etage_dep`, `ascenseur_dep`, `taille_ascenseur_dep`, `cave_dep`, `distance_dep`, `commentaire_dep`, `adresses_arr`, `type_logement_arr`, `surface_dep_arr`, `etage_arr`, `ascenseur_arr`, `taille_ascenseur_arr`, `cave_arr`, `distance_arr`, `commentaire_arr`, `status`, `source`, `nom`, `prenom`, `portable`, `telephone`, `email`) VALUES
+(9, 591, '', 'null', 2, 1, '1', 'null', 'null', '1', '0000-00-00', '1', '1', '', '', 0, 0, 0, 0, 0, '', '', '', '', 0, 0, 0, 0, 0, '', '', '', '', '', '', 0, 0, '');
 
 -- --------------------------------------------------------
 
@@ -169,6 +223,12 @@ INSERT INTO `typemobilier` (`id_tm`, `name_tm`) VALUES
 --
 
 --
+-- Indexes for table `devis`
+--
+ALTER TABLE `devis`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `mobilier`
 --
 ALTER TABLE `mobilier`
@@ -185,6 +245,12 @@ ALTER TABLE `typemobilier`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `devis`
+--
+ALTER TABLE `devis`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `mobilier`
