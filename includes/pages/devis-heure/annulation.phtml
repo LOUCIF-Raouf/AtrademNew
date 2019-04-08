@@ -28,3 +28,19 @@
         </div>
     </div>
 </div>
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#annulationForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                let qty = Cart.getFullItem('annulation').quantity;
+                let id = Cart.getFullItem('annulation').id;
+                let uid = localStorage.getItem('uid');
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { qty: qty, id: id, uid: uid}
+                })
+
+            }); },2000);
+  </script>

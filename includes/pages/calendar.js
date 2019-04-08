@@ -49,21 +49,21 @@ function display() {
 
     if (isWK == true) {
         Cart.addItem({
-            id: 'dateDem',
+            id: 'date',
             quantity: -1,
         });
         Cart.addItem({
-            id: 'dateDem',
+            id: 'date',
             price: 200,
             label: 'Date : ' + calendar.getDays(),
         });
     } else {
         Cart.addItem({
-            id: 'dateDem',
+            id: 'date',
             quantity: -1,
         });
         Cart.addItem({
-            id: 'dateDem',
+            id: 'date',
             price: 0,
             label: 'Date : ' + calendar.getDays(),
         });

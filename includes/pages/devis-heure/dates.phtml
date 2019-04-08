@@ -3,3 +3,24 @@
 </div>
 
 <div class="hello-week"></div>
+
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#dateForm .slideform-btn-next');
+            OKButton.on('click', e => {
+              let qty = Cart.getFullItem('date').quantity;
+              let id = Cart.getFullItem('date').id;
+              let uid = localStorage.getItem('uid');
+              if(!Cart.getItem("date")){
+                $("#dateFailModal").modal("show");
+              }else{
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { qty: qty, id: id, uid: uid}
+                })
+
+              }
+            }); },2000);
+  </script>

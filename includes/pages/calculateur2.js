@@ -4,11 +4,11 @@
     /* ------------- NOMBRE DEMENAGEURS --------------- */
     $('.radio-nb-demen').on('click', e => {
         Cart.addItem({
-            id: "nbDemen",
+            id: "nb_demen",
             quantity: -1,
         });
         Cart.addItem({
-            id: "nbDemen",
+            id: "nb_demen",
             price: e.target.dataset.price,
             quantity: e.target.dataset.quantity,
             label: e.target.dataset.label,
@@ -23,7 +23,7 @@
 
     noTruck.addEventListener('click', e => {
         Cart.addItem({
-            id: "tailleCamion",
+            id: "taille_camion",
             quantity: -1
         });
     });
@@ -31,11 +31,11 @@
     for (var i = 0; i < truckSizes.length; i++) {
         truckSizes[i].addEventListener('click', e => {
             Cart.addItem({
-                id: "tailleCamion",
+                id: "taille_camion",
                 quantity: -1
             });
             Cart.addItem({
-                id: "tailleCamion",
+                id: "taille_camion",
                 price: e.target.dataset.price,
                 quantity: 1,
                 label: e.target.dataset.label,
@@ -47,8 +47,8 @@
     /* ------------- DUREE PRESTATION ------------- */
 
 
-    let boxDuree4h =  document.getElementById('boxDuree4h');
-    let boxDuree7h =  document.getElementById('boxDuree7h');
+    let boxDuree4h = document.getElementById('boxDuree4h');
+    let boxDuree7h = document.getElementById('boxDuree7h');
     let demiJourneeVal = document.getElementById('demi_journee_val');
 
     $("#boxDuree4h").click(e => {
@@ -59,7 +59,7 @@
         demiJourneeVal.style.display = "block";
         let card = document.getElementById('radio4h');
 
-        
+
 
 
         /* Cart.addItem({
@@ -82,80 +82,37 @@
         document.getElementById('radio7h').click();
         demiJourneeVal.style.display = "none";
         let card = document.getElementById('radio7h');
-        var nbDemenPrice = parseInt(Cart.getFullItem("nbDemen").hiddenPrice);
-        var taillePrice = parseInt(Cart.getFullItem("tailleCamion").hiddenPrice);
+        var nbDemenPrice = parseInt(Cart.getFullItem("nb_demen").hiddenPrice);
+        var taillePrice = parseInt(Cart.getFullItem("taille_camion").hiddenPrice);
         var garantie = Cart.getFullItem("garantie");
-        var combo = taillePrice + nbDemenPrice +  parseInt(card.dataset.price);
-        
+        var combo = taillePrice + nbDemenPrice + parseInt(card.dataset.price);
+
         Cart.addItem({
-            id: "garantie",
+            id: "duree_presta",
             quantity: -1,
         });
         Cart.addItem({
-            id: "garantie",
+            id: "duree_presta",
             label: card.dataset.label,
             quantity: 1,
-            price:  combo,
+            price: combo,
         });
     });
 
     $('.demi_journee_val').on('change', e => {
         var val = document.getElementById("demi_journee_val").value;
-        var nbDemenPrice = parseInt(Cart.getFullItem("nbDemen").hiddenPrice);
-        var taillePrice = parseInt(Cart.getFullItem("tailleCamion").hiddenPrice);
-        var combo = taillePrice + nbDemenPrice +  parseInt(e.target.dataset.price);
+        var nbDemenPrice = parseInt(Cart.getFullItem("nb_demen").hiddenPrice);
+        var taillePrice = parseInt(Cart.getFullItem("taille_camion").hiddenPrice);
+        var combo = taillePrice + nbDemenPrice + parseInt(e.target.dataset.price);
         Cart.addItem({
-            id: "garantie",
+            id: "duree_presta",
             quantity: -1,
         });
         Cart.addItem({
-            id: "garantie",
+            id: "duree_presta",
             quantity: 1,
             label: val,
             price: combo,
         });
 
-    });
-
-    /*--------- OPTIONS ----------*/
-
-    $('#option_select_mm').on('change', function (e) {
-
-
-        var value = e.target.value.split(':');
-        console.log(value[1])
-        if (value[1] == undefined) {
-            Cart.addItem({
-                id: e.target.dataset.id,
-                quantity: -1,
-            });
-        } else {
-            Cart.addItem({
-                id: e.target.dataset.id,
-                quantity: -1,
-            });
-
-            Cart.addItem({
-                id: e.target.dataset.id,
-                price: value[0],
-                label: value[1],
-                quantity: 1,
-            });
-        }
-    });
-
-    $('.option_select_details').on('change', function (e) {
-
-
-        Cart.addItem({
-            id: e.target.dataset.id,
-            quantity: -1,
-        });
-
-        Cart.addItem({
-            id: e.target.dataset.id,
-            quantity: e.target.value,
-            price: e.target.dataset.price,
-            label: e.target.dataset.label,
-        });
     });

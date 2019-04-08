@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   var buttons = document.querySelectorAll('.article button'); //bouton ajouter
   var panier = document.getElementById('recapTable'); //tableau HTML affichage
   var clearCart = document.getElementById('clearCart'); //bouton supprimer
@@ -265,11 +265,11 @@ $(document).ready(function() {
 
   $('.checkbox_livraison').click(e => {
     Cart.addItem({
-      id: 'materielLivraison',
+      id: 'reception',
       quantity: -1
     });
     Cart.addItem({
-      id: 'materielLivraison',
+      id: 'reception',
       price: e.target.dataset.price,
       label: e.target.dataset.label
     });
@@ -277,7 +277,7 @@ $(document).ready(function() {
 
   $('#radioAnnulationNLabel').click(e => {
     Cart.addItem({
-      id: 'assuranceAnnulation',
+      id: 'annulation',
       quantity: -1
     });
   });
@@ -285,7 +285,11 @@ $(document).ready(function() {
   $('#radioAnnulationYLabel').click(e => {
     let radioAnnulation = document.getElementById('radioAnnulationY');
     Cart.addItem({
-      id: 'assuranceAnnulation',
+      id: 'annulation',
+      quantity: -1
+    });
+    Cart.addItem({
+      id: 'annulation',
       price: radioAnnulation.dataset.price,
       label: radioAnnulation.dataset.label
     });
@@ -336,8 +340,8 @@ $(document).ready(function() {
       let qty =
         parseFloat(
           $(e.target)
-            .prev()
-            .val()
+          .prev()
+          .val()
         ) + 1;
 
       $(e.target)
@@ -356,8 +360,8 @@ $(document).ready(function() {
     minus[i].addEventListener('click', e => {
       let qty =
         $(e.target)
-          .next()
-          .val() - 1;
+        .next()
+        .val() - 1;
       if (qty >= 0) {
         $(e.target)
           .next()
@@ -380,7 +384,7 @@ $(document).ready(function() {
           });
       } */
 
-  $('#selectedObject').on('select2:select', function(e) {
+  $('#selectedObject').on('select2:select', function (e) {
     $('.select2-selection__choice').remove();
 
     var id = e.params.data.element.attributes[0].value;
@@ -389,6 +393,49 @@ $(document).ready(function() {
     var size = price / 36;
 
     addArticle(id, name, size, price);
+  });
+
+
+  /*--------- OPTIONS ----------*/
+
+  $('#option_select_mm').on('change', function (e) {
+
+
+    var value = e.target.value.split(':');
+    if (value[1] == undefined) {
+      Cart.addItem({
+        id: e.target.dataset.id,
+        quantity: -1,
+      });
+    } else {
+      Cart.addItem({
+        id: e.target.dataset.id,
+        quantity: -1,
+      });
+
+      Cart.addItem({
+        id: e.target.dataset.id,
+        price: value[0],
+        label: value[1],
+        quantity: 1,
+      });
+    }
+  });
+
+  $('.option_select_details').on('change', function (e) {
+
+
+    Cart.addItem({
+      id: e.target.dataset.id,
+      quantity: -1,
+    });
+
+    Cart.addItem({
+      id: e.target.dataset.id,
+      quantity: e.target.value,
+      price: e.target.dataset.price,
+      label: e.target.dataset.label,
+    });
   });
 
   //event pour les boutons moins

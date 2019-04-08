@@ -11,22 +11,22 @@
             <span class="form-group">
                 <div id="locationField">
                     <input id="autocomplete" placeholder="Adresse *" onFocus="geolocate()" type="text" tabindex="1"
-                        name="addressDep" value="" class="wpcf7-form-control" required />
+                        name="Adresse départ" value="" class="wpcf7-form-control" required />
                 </div>
             </span>
             <div class="row">
                 <span class="form-group col-md-6">
-                    <input type="text" tabindex="2" id="postal_code" name="cpDep" value="" class="wpcf7-form-control"
+                    <input type="text" tabindex="2" id="postal_code" name="Code-postal départ" value="" class="wpcf7-form-control"
                         placeholder="Code postal *" required>
                 </span>
                 <span class="form-group col-md-6">
-                    <input type="text" tabindex="3" id="locality" name="cityDep" value="" class="wpcf7-form-control"
+                    <input type="text" tabindex="3" id="locality" name="Ville départ" value="" class="wpcf7-form-control"
                         placeholder="Ville *" required>
                 </span>
             </div>
             <div class="row">
                 <span class="form-group col-md-6">
-                    <select name="typeDep" id="typeDep" class="wpcf7-form-control" required>
+                    <select name="Type_départ" id="typeDep" class="wpcf7-form-control" required>
                         <option selected disabled>Type... *</option>
                         <option value="Appartement">Appartement</option>
                         <option value="Maison">Maison</option>
@@ -36,19 +36,19 @@
 
                 <span class="form-group col-md-6">
                     <div class="input-group">
-                        <input type="number" tabindex="3" id="surfaceDep" name="surfaceDep" value=""
-                            class="wpcf7-form-control form-control" placeholder="Surface m³" required>
                         <div class="input-group-append">
                             <span class="input-group-text mb-0">m³</span>
                         </div>
+                        <input type="number" tabindex="3" id="surfaceDep" name="Surface départ" value=""
+                            class="wpcf7-form-control form-control" placeholder="Surface m³" required>
                     </div>
                 </span>
             </div>
 
-            <div data-condition="input.typeDep == 'Appartement'" class="col-12 p-0" style="display: none;">
+            <div data-condition="input.Type_départ == 'Appartement'" class="col-12 p-0" style="display: none;">
                 <div class="row">
                     <div class="options options-buttons col-6">
-                        <select name="etageAppDep" id="etageAppDep" required>
+                        <select name="Etage départ" id="etageAppDep" class="adresse-etage" required>
                             <option disabled selected value="" placeholder="">Etage</option>
                             <option value="RDC">RDC</option>
                             <option value="1">1</option>
@@ -75,14 +75,14 @@
                     </div>
 
                     <div class="options options-buttons col-6">
-                        <select name="ascAppDep" id="ascAppDep" required>
+                        <select name="ascenseur_départ" id="ascAppDep" required>
                             <option disabled selected value="" placeholder="">Ascenseur *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
 
-                        <div data-condition="input.ascAppDep == 'yes'" style="display: none;">
-                            <select name="sizeAscAppDep" id="sizeAscAppDep" required>
+                        <div data-condition="input.ascenseur_départ == 'oui'" style="display: none;">
+                            <select name="Taille ascenseur départ" id="sizeAscAppDep" required>
                                 <option disabled selected value="" placeholder="">Séléctionnez la place
                                     maximale</option>
                                 <option value="1">1</option>
@@ -101,17 +101,17 @@
                 <div class="row">
 
                     <div class="options options-buttons col-6">
-                        <select name="caveAppDep" id="caveAppDep" required>
+                        <select name="Cave départ" id="caveAppDep" required>
                             <option disabled selected value="" placeholder="">Cave *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                     <div class="options options-buttons col-6">
-                        <select name="monteAppDep" id="monteAppDep" required>
+                        <select name="Monte-charge départ" id="monteAppDep" required>
                             <option disabled selected value="" placeholder="">Monte-charge *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                 </div>
@@ -119,16 +119,16 @@
                 <div class="row">
                     <div class="options options-buttons col-12">
                         <h3 class="mb-0 mt-2">Distance logement / rue</h3>
-                        <input id="distAppDep" required />
+                        <input id="distAppDep" name="Distance logement/rue départ" class="adresse-distance" required />
                     </div>
                 </div>
             </div>
 
-            <div data-condition="input.typeDep == 'Maison'" class="col-12 p-0" style="display: none;">
+            <div data-condition="input.Type_départ == 'Maison'" class="col-12 p-0" style="display: none;">
                 <div class="row">
 
                     <div class="options options-buttons col-6">
-                        <select name="etageHomeDep" id="etageHomeDep" required>
+                        <select name="Etage départ" id="etageHomeDep" class="adresse-etage" required>
                             <option disabled selected value="" placeholder="">Etage</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -144,19 +144,19 @@
                     </div>
 
                     <div class="options options-buttons col-6">
-                        <select name="monteHomeDep" id="monteHomeDep" required>
+                        <select name="Monte-charge départ" id="monteHomeDep" required>
                             <option disabled selected value="" placeholder="">Monte-charge *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <select name="gardeHomeDep" id="gardeHomeDep" required>
+                        <select name="Garde-meuble départ" id="gardeHomeDep" required>
                             <option disabled selected value="" placeholder="">Garde-meuble *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
                     <div class="col-md-12">
                         <div class="options options-buttons col-12">
                             <h3 class="mb-0 mt-2">Distance logement/rue</h3>
-                            <input id="distHomeDep" required />
+                            <input id="distHomeDep" name="Distance logement/rue départ" class="adresse-distance" required />
                         </div>
                     </div>
                 </div>
@@ -173,12 +173,12 @@
             </div>
 
 
-            <div data-condition="input.typeDep == 'yes' &amp;&amp;  input.group6 == 'yes'" style="display: none;">
+            <div data-condition="input.typeDep == 'oui' &amp;&amp;  input.group6 == 'oui'" style="display: none;">
                 <p>This message appears after all conditions have been marked as "yes".</p>
             </div>
 
             <span class="form-group">
-                <textarea name="commentDep" tabindex="5" row="5" class="wpcf7-form-control wpcf7-textarea"
+                <textarea name="Commentaire départ" id="commentDep" tabindex="5" row="5" class="wpcf7-form-control wpcf7-textarea"
                     placeholder="Complément: Batîment, code, porte, autre ..."></textarea>
             </span>
 
@@ -197,22 +197,22 @@
             <span class="form-group">
                 <div id="locationField">
                     <input id="autocomplete2" placeholder="Adresse *" onFocus="geolocate()" type="text" tabindex="1"
-                        name="addressArr" value="" class="wpcf7-form-control" required />
+                        name="Adresse arrivée" value="" class="wpcf7-form-control" required />
                 </div>
             </span>
             <div class="row">
                 <span class="form-group col-md-6">
-                    <input type="text" tabindex="2" id="postal_code_2" name="cpArr" value="" class="wpcf7-form-control"
+                    <input type="text" tabindex="2" id="postal_code_2" name="Code postal arrivée" value="" class="wpcf7-form-control"
                         placeholder="Code postal *" required>
                 </span>
                 <span class="form-group col-md-6">
-                    <input type="text" tabindex="3" id="locality_2" name="cityArr" value="" class="wpcf7-form-control"
+                    <input type="text" tabindex="3" id="locality_2" name="Ville arrivée" value="" class="wpcf7-form-control"
                         placeholder="Ville *" required>
                 </span>
             </div>
             <div class="row">
                 <span class="form-group col-md-6">
-                    <select name="typeArr" id="typeArr" class="wpcf7-form-control" required>
+                    <select name="Type_arrivée" id="typeArr" class="wpcf7-form-control" required>
                         <option selected disabled>Type... *</option>
                         <option value="Appartement">Appartement</option>
                         <option value="Maison">Maison</option>
@@ -222,18 +222,18 @@
 
                 <span class="form-group col-md-6">
                     <div class="input-group">
-                        <input type="number" tabindex="3" id="surfaceArr" name="surfaceArr" value=""
-                            class="wpcf7-form-control form-control" placeholder="Surface m³" required>
                         <div class="input-group-append">
                             <span class="input-group-text mb-0">m³</span>
                         </div>
+                        <input type="number" tabindex="3" id="surfaceArr" name="Surface arrivée" value=""
+                            class="wpcf7-form-control form-control" placeholder="Surface m³" required>
                     </div>
                 </span>
             </div>
-            <div data-condition="input.typeArr == 'Appartement'" class="col-12 p-0" style="display: none;">
+            <div data-condition="input.Type_arrivée == 'Appartement'" class="col-12 p-0" style="display: none;">
                 <div class="row">
                     <div class="options options-buttons col-6 form-group">
-                        <select name="etageAppArr" id="etageAppArr" required>
+                        <select name="Etage(s) arrivée" id="etageAppArr" class="adresse-etage" required>
                             <option disabled selected value="" placeholder="">Etage</option>
                             <option value="RDC">RDC</option>
                             <option value="1">1</option>
@@ -260,14 +260,14 @@
                     </div>
 
                     <div class="options options-buttons col-6 form-group">
-                        <select name="ascAppArr" id="ascAppArr" required>
+                        <select name="Ascenseur_arrivée" id="ascAppArr" required>
                             <option disabled selected value="" placeholder="">Ascenseur *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
 
-                        <div data-condition="input.ascArr == 'yes'" style="display: none;">
-                            <select name="sizeAscAppArr" id="sizeAscAppArr" required>
+                        <div data-condition="input.Ascenseur_arrivée == 'oui'" style="display: none;">
+                            <select name="Taille ascenseur arrivée" id="sizeAscAppArr" required>
                                 <option disabled selected value="" placeholder="">Séléctionnez la place
                                     maximale</option>
                                 <option value="1">1</option>
@@ -286,17 +286,17 @@
                 <div class="row">
 
                     <div class="options options-buttons col-6 form-group">
-                        <select name="caveAppArr" id="caveAppArr" required>
+                        <select name="Cave arrivée" id="caveAppArr" required>
                             <option disabled selected value="" placeholder="">Cave *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                     <div class="options options-buttons col-6 form-group">
-                        <select name="monteAppArr" id="monteAppArr" required>
+                        <select name="Monte-charge arrivée" id="monteAppArr" required>
                             <option disabled selected value="" placeholder="">Monte-charge *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                 </div>
@@ -304,16 +304,16 @@
                 <div class="row">
                     <div class="options options-buttons col-12">
                         <h3 class="mb-0 mt-2">Distance logement / rue</h3>
-                        <input id="distAppArr" required />
+                        <input id="distAppArr" name="Distance logement/rue arrivée" class="adresse-distance" required />
                     </div>
                 </div>
             </div>
 
-            <div data-condition="input.typeArr == 'Maison'" class="col-12 p-0" style="display: none;">
+            <div data-condition="input.Type_arrivée == 'Maison'" class="col-12 p-0" style="display: none;">
                 <div class="row">
 
                     <div class="options options-buttons col-6">
-                        <select name="etageHomeArr" id="etageHomeArr" required>
+                        <select name="Etage arrivée" id="etageHomeArr" class="adresse-etage" required>
                             <option disabled selected value="" placeholder="">Etage</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -329,19 +329,19 @@
                     </div>
 
                     <div class="options options-buttons col-6">
-                        <select name="monteHomeArr" id="monteHomeArr" required>
+                        <select name="Monte-charge arrivée" id="monteHomeArr" required>
                             <option disabled selected value="" placeholder="">Monte-charge *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-6">
-                        <select name="gardeHomeArr" id="gardeHomeArr" required>
+                        <select name="Garde-meuble arrivée" id="gardeHomeArr" required>
                             <option disabled selected value="" placeholder="">Garde-meuble *</option>
-                            <option value="yes">Oui</option>
-                            <option value="no">Non</option>
+                            <option value="oui">Oui</option>
+                            <option value="non">Non</option>
                         </select>
                     </div>
                 </div>
@@ -350,20 +350,20 @@
                     <div class="col-md-12">
                         <div class="options options-buttons col-12">
                             <h3 class="mb-0 mt-2">Distance logement/rue</h3>
-                            <input id="distHomeArr" required />
+                            <input id="distHomeArr" name="Distance logement/rue arrivée" class="adresse-distance" required />
                         </div>
                     </div>
                 </div>
 
             </div>
 
-            <div data-condition="input.typeArr == 'yes' &amp;&amp;  input.group6 == 'yes'" style="display: none;">
+            <div data-condition="input.typeArr == 'oui' &amp;&amp;  input.group6 == 'oui'" style="display: none;">
                 <p>This message appears after all conditions have been marked as "yes".</p>
             </div>
 
 
             <span class="form-group">
-                <textarea name="commentArr" tabindex="5" row="5" class="wpcf7-form-control wpcf7-textarea"
+                <textarea name="Commentaire arrivée" id="commentArr" tabindex="5" row="5" class="wpcf7-form-control wpcf7-textarea"
                     placeholder="Complément: Batîment, code, porte, autre ..."></textarea>
             </span>
         </div>
@@ -373,91 +373,166 @@
 </div>
 
 <script>
-    var OKButton;
-    setTimeout(() => {
+            var OKButton;
+            setTimeout(() => {
+            OKButton = $('#adressesForm .slideform-btn-next')[0];
+            OKButton.addEventListener('click', () => {
+                let inputs = $("#addForm").serializeArray();
+                let inputList = []
+                /* Cart.addItem({
+                    id:"adressesDem"
+                }) */
+                inputs.forEach(input =>{
+                    console.log(input);
+                    if(input.name.split(" ")[0] == "Etage"){
+                        if(input.name.split(" ")[1] == "départ"){
+                            if(input.value > 3){
+                                Cart.addItem({
+                                    id: "etageDep",
+                                    quantity: -Infinity,
+                                })
+                                Cart.addItem({
+                                    id: "etageDep",
+                                    quantity: input.value - 3,
+                                    label: input.name,
+                                    price: 30
+                                })
+                            }
+                        }
+                        if(input.name.split(" ")[1] == "arrivée"){
+                            if(input.value > 3){
+                                Cart.addItem({
+                                    id: "etageArr",
+                                    quantity: -Infinity,
+                                })
+                                Cart.addItem({
+                                    id: "etageArr",
+                                    quantity: input.value - 3,
+                                    label: input.name,
+                                    price: 30
+                                })
+                            }
+                        }
+                    }
+                        if(input.name == "Type_arrivée"){
 
-        OKButton = $('.adressesButtonForm .slideform-btn-next')[0];
-        OKButton.addEventListener('click', () => {
+                            if(input.value == "Garde-meuble"){
+                                Cart.addItem({
+                                    id: "etageDep",
+                                    quantity: -Infinity,
+                                })
+                                Cart.addItem({
+                                    id: "distPortageDep",
+                                    quantity: -Infinity,
+                                })
+                        }
+                        }
 
-            console.log(document.getElementById('typeDep').value);
+                        if(input.name == "Type_départ"){
+                            if(input.value == "Garde-meuble"){
+                                Cart.addItem({
+                                    id: "etageArr",
+                                    quantity: -Infinity,
+                                })
+                                Cart.addItem({
+                                    id: "distPortageArr",
+                                    quantity: -Infinity,
+                                })
+                        }
+                    }
 
-            let tab = [];
 
-            let depInputs = document.getElementById('depBox').getElementsByTagName('input');
-            let depSelects = document.getElementById('depBox').getElementsByTagName('select');
-            let depTextAreas = document.getElementById('depBox').getElementsByTagName('textarea');
+                    if(input.name.split(" ")[0] == "Distance"){
 
-            let arrInputs = document.getElementById('arrBox').getElementsByTagName('input');
-            let arrSelects = document.getElementById('arrBox').getElementsByTagName('select');
-            let arrTextAreas = document.getElementById('arrBox').getElementsByTagName('textarea');
+                        if(input.name.split(" ")[2] == "arrivée"){
+                            if(input.value > 10){
+                                Cart.addItem({
+                                    id: "distPortageArr",
+                                    quantity: -Infinity,
+                                })
+                                Cart.addItem({
+                                    id: "distPortageArr",
+                                    quantity: input.value - 10,
+                                    label: input.name,
+                                    price: 1
+                                })
+                            }
+                        }
 
-            for (var i = 0; i < depInputs.length; i++) {
-                input = depInputs[i];
-                console.log('input:' + input.value)
+                        if(input.name.split(" ")[2] == "départ"){
+                            if(input.value > 10){
+                                Cart.addItem({
+                                    id: "distPortageDep",
+                                    quantity: -Infinity,
+                                })
+                                Cart.addItem({
+                                    id: "distPortageDep",
+                                    quantity: input.value - 10,
+                                    label: input.name,
+                                    price: 1
+                                })
+                            }
+                        }
+                    }
+                   inputList.push(input)
+                })
+                console.log(inputList)
+                localStorage.setItem('adressesDem', JSON.stringify(inputList));
+            }); },2000);
+            /* let inputs = document.getElementById('addForm').getElementsByTagName('input');
+            let selects = document.getElementById('addForm').getElementsByTagName('select');
+            let textAreas = document.getElementById('addForm').getElementsByTagName('textarea');
+
+            let etages = document.getElementsByClassName('adresses-etage');
+            let distances = document.getElementsByClassName('adresses-distance');
+
+            let departure = []
+            let arrival = []
+
+
+
+            for (var i = 0; i < inputs.length; i++) {
+                input = inputs[i];
+                input.addEventListener('change', e => {
+                    Cart.addItem({
+                        id: "adresses",
+                        quantity:-1,
+                    })
+                    Cart.addItem({
+                        id: "adresses",
+
+                    })
+                })
             }
 
-            for (var i = 0; i < depSelects.length; i++) {
-                select = depSelects[i];
-                console.log('select:' + select.value)
+            for (var i = 0; i < selects.length; i++) {
+                select = selects[i];
+                select.addEventListener('change', e => {
+                    Cart.addItem({
+                        id: e.target.id,
+                        quantity:-1,
+                    })
+                    Cart.addItem({
+                        id: e.target.id,
+                        label: e.target.value,
+                    })
+                })
 
             }
 
-            for (var i = 0; i < depTextAreas.length; i++) {
-                textArea = depTextAreas[i];
-                console.log('textArea:' + textArea.value)
-            }
-
-            for (var i = 0; i < tab.length; i++) {
-                tabs = tab[i];
-            }
-
-            Cart.addItem({
-                id: "adresseDep",
-                label: "Adresse de départ",
-
-                price: 0,
-            })
-
-            Cart.addItem({
-                id: "adresseArr",
-                label: "Adresse d'arrivée'",
-            })
+            for (var i = 0; i < textAreas.length; i++) {
+                textArea = textAreas[i];
+                textArea.addEventListener('change', e => {
+                    Cart.addItem({
+                        id: e.target.id,
+                        quantity:-1,
+                    })
+                    Cart.addItem({
+                        id: e.target.id,
+                        label: e.target.value,
+                    })
+                })
+            } */
 
 
-
-
-        });
-    }, 2000);
-
-
-    /*  $(function() {
-
-         $( ".slideform-btn" ).submit(function( event ) {
-         if ( $( "input:first" ).val() === "correct" ) {
-             $( "span" ).text( "Validated..." ).show();
-             return;
-         }
-         });
-
-         $('').on('click', () => {
-
-         });
-
-             $('input[name="addressDep"]').on('click', () => {
-                 document.getElementById('autocomplete').readOnly = false;
-             });
-
-             $('input[name="addressDep"]').on('blur', () => {
-                 document.getElementById('autocomplete').readOnly = true;
-             });
-
-             $('input[name="addressArr"]').on('click', () => {
-                 document.getElementById('autocomplete2').readOnly = false;
-             });
-
-             $('input[name="addressArr"]').on('blur', () => {
-                 document.getElementById('autocomplete2').readOnly = true;
-             });
-
-     }); */
 </script>

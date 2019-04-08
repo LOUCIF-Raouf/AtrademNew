@@ -26,7 +26,7 @@
               <div class="wrapper">
 
                 <div id="calculator-container" class="col-md-12">
-                  <form action="">
+                  <form id="slideForm" action="">
 
                     <div class="slideform-wrapper">
 
@@ -38,7 +38,7 @@
 
                       <!-- Inventaire -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="calcObjectForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/calculateur-objet.php";?>
                         </div>
                       </div>
@@ -52,7 +52,7 @@
 
                       <!-- Cartons -->
                       <div class="slideform-slide">
-                        <div class="slideform-group cartonButtonForm">
+                        <div class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/cartons.phtml";?>
                         </div>
                       </div>
@@ -74,14 +74,14 @@
 
                       <!-- Date déménagement -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="dateForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/dates.phtml";?>
                         </div>
                       </div>
 
                       <!-- Garanties -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="garantiesForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/garanties.phtml";?>
                         </div>
                       </div>
@@ -95,7 +95,7 @@
 
                       <!-- Adresses déménagement -->
                       <div class="slideform-slide">
-                        <div class="slideform-group adressesButtonForm">
+                        <div id="adressesForm" class="slideform-group">
                           <?php include "./includes/pages/devis-inventaire/adresses.phtml";?>
                         </div>
                       </div>
@@ -148,6 +148,12 @@
     </div>
   </div>
 
+  <!------------------- MODALS --------------------->
+
+  <?php include "./includes/pages/devis-inventaire/modals.phtml";?>
+
+
+  <!------------------- SCRIPT --------------------->
   <script src="assets/js/jquery.validate.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/animsition.js"></script>
@@ -203,30 +209,7 @@
       $('#selectedObject').select2({
         lang: "fr",
         placeholder: 'Selectionnez un objet',
-        width: '80%', // need to override the changed default
-        /* ajax: {
-          url: "getData.php",
-          dataType: 'json',
-          quietMillis: 100,
-          data: function (term, page) {
-              return {
-                  term: term,
-                  page_limit: 10
-              };
-          },
-          results: function (data, page) {
-              return { results: data.results };
-          }
-
-      },
-      initSelection: function(element, callback) {
-          return $.getJSON("getData.php?id=" + (element.val()), null, function(data) {
-
-                  return callback(data);
-
-          });
-      }
-*/
+        width: '80%',
       });
 
 
@@ -236,11 +219,33 @@
         $('#menu1, #menu2').metisMenu();
       });
 
-      $('form').slideform();
+      $('form').slideform({
+        validate: {
+          rules: {
+              radioAnnulation: {
+                  required: true,
+              },
+          },
+          messages: {
+              radioAnnulation: {
+                  required: 'Veuillez choisir une option',
+              },
+          }
+      },
+      submit: function (event, form) {
+        console.log('forward');
+          $form.trigger('goForward');
+      }
+      });
 
-      /* $('#selectedObject').select2({
-        placeholder: 'Selectionnez un objet',
-      }); */
+    /*  $('form').validate({
+        rules: {
+              radioAnnulation: {
+                  required: true,
+                  equals: "valid"
+              }
+          }
+      }) */
 
 
       $("#distHomeDep, #distAppDep, #distHomeArr, #distAppArr").ionRangeSlider({

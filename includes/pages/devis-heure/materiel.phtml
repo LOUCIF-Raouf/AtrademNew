@@ -42,6 +42,66 @@
 			<div class="list-materiel-2">
 				<div class="materiel-2 ">
 					<div class="col-md-12 col-xs-12  no-padding details-shop-description">
+						<h3 class="name">Bulle de protection</h3>
+						<p class="text-center">
+						</p>
+					</div>
+					<div class=" img-carton-responsive">
+					</div>
+				</div>
+				<div class="col-md-12 col-xs-12 no-padding add-panier-2">
+					<div action="#" method="post" class="cart_8" id="add_materiel_details">
+						<input type="hidden" id="id_send" value="8">
+						<div class="col-md-8 col-xs-8 pdlr0">
+							<div class="form-group">
+								<input type="button" class="plus_moins minus" value="-" data-id="8">
+								<input type="text" class="input-text qty text" disabled=""  value="0"
+									name="quantite" id="quantite_8" min="0" step="1">
+								<input type="button" class="plus_moins plus" value="+" data-id="8" data-label="Bulle de protection" data-price="9.90">
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-4 prix pdl0" style="line-height:30px;">
+							9.90 €
+						</div>
+					</div>
+				</div>
+				<br clear="all">
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 ">
+			<div class="list-materiel-2">
+				<div class="materiel-2 ">
+					<div class="col-md-12 col-xs-12  no-padding details-shop-description">
+						<h3 class="name">Bulle de protection</h3>
+						<p class="text-center">
+						</p>
+					</div>
+					<div class=" img-carton-responsive">
+					</div>
+				</div>
+				<div class="col-md-12 col-xs-12 no-padding add-panier-2">
+					<div action="#" method="post" class="cart_8" id="add_materiel_details">
+						<input type="hidden" id="id_send" value="8">
+						<div class="col-md-8 col-xs-8 pdlr0">
+							<div class="form-group">
+								<input type="button" class="plus_moins minus" value="-" data-id="8">
+								<input type="text" class="input-text qty text" disabled=""  value="0"
+									name="quantite" id="quantite_8" min="0" step="1">
+								<input type="button" class="plus_moins plus" value="+" data-id="8" data-label="Bulle de protection" data-price="9.90">
+							</div>
+						</div>
+						<div class="col-md-4 col-xs-4 prix pdl0" style="line-height:30px;">
+							9.90 €
+						</div>
+					</div>
+				</div>
+				<br clear="all">
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 ">
+			<div class="list-materiel-2">
+				<div class="materiel-2 ">
+					<div class="col-md-12 col-xs-12  no-padding details-shop-description">
 						<h3 class="name">Carton Standard</h3>
 						<p class="text-center">
 							Dimensions : 55 x 35 x 30 cm </p>
@@ -57,11 +117,11 @@
 								<input type="button" class="plus_moins minus" value="-" data-id="100">
 								<input type="text" class="input-text qty text" disabled=""  value="0"
 									name="quantite" id="quantite_100" min="0" step="1">
-								<input type="button" class="plus_moins plus" value="+" data-id="100" data-label="Carton standard" data-price="9.90">
+								<input type="button" class="plus_moins plus" value="+" data-id="100" data-label="Carton standard" data-price="1.15">
 							</div>
 						</div>
 						<div class="col-md-4 col-xs-4 prix pdl0" style="line-height:30px;">
-							1.80 €
+							1.15 €
 						</div>
 					</div>
 				</div>
@@ -87,11 +147,11 @@
 								<input type="button" class="plus_moins minus" value="-" data-id="101">
 								<input type="text" class="input-text qty text" disabled=""  value="0"
 									name="quantite" id="quantite_101" min="0" step="1">
-								<input type="button" class="plus_moins plus" value="+" data-id="101" data-label="Carton livres" data-price="9.90">
+								<input type="button" class="plus_moins plus" value="+" data-id="101" data-label="Carton livres" data-price="0.80">
 							</div>
 						</div>
 						<div class="col-md-4 col-xs-4 prix pdl0" style="line-height:30px;">
-							1.00 €
+							0.80 €
 						</div>
 					</div>
 				</div>
@@ -398,3 +458,20 @@
 	</div>
 
 </div>
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#materielForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                let qty = Cart.getFullItem('reception').quantity;
+                let id = Cart.getFullItem('reception').id;
+                let uid = localStorage.getItem('uid');
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { qty: qty, id: id, uid: uid}
+                }).done(function(msg){
+					alert(msg);
+				})
+            }); },2000);
+  </script>

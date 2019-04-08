@@ -32,14 +32,14 @@
 
                       <!-- Nombre déménageurs -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="nbDemenForm" class="slideform-group">
                         <?php include "./includes/pages/devis-heure/nb-demenageurs.phtml";?>
                         </div>
                       </div>
 
                       <!-- Taille Camion -->
                       <div class="slideform-slide">
-                          <div class="slideform-group">
+                          <div id="tailleCamionForm" class="slideform-group">
                            <?php include "./includes/pages/devis-heure/taille-camion.phtml";?>
                           </div>
                       </div>
@@ -47,7 +47,7 @@
 
                       <!-- Durée prestation -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="dureePrestationForm" class="slideform-group">
                           <?php include "./includes/pages/devis-heure/duree-prestation.phtml";?>
                         </div>
                       </div>
@@ -63,35 +63,35 @@
 
                       <!-- Matériel -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="materielForm" class="slideform-group">
                           <?php include "./includes/pages/devis-heure/materiel.phtml";?>
                         </div>
                       </div>
 
                       <!-- Date déménagement -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="dateForm" class="slideform-group">
                           <?php include "./includes/pages/devis-heure/dates.phtml";?>
                         </div>
                       </div>
 
                       <!-- Garanties -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="garantiesForm" class="slideform-group">
                           <?php include "./includes/pages/devis-heure/garanties.phtml";?>
                         </div>
                       </div>
 
                       <!-- Annulation -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="annulationForm" class="slideform-group">
                           <?php include "./includes/pages/devis-heure/annulation.phtml";?>
                         </div>
                       </div>
 
                       <!-- Adresses déménagement -->
                       <div class="slideform-slide">
-                        <div class="slideform-group adressesButtonForm">
+                        <div id="adressesForm" class="slideform-group">
                           <?php include "./includes/pages/devis-heure/adresses.phtml";?>
                         </div>
                       </div>
@@ -99,7 +99,7 @@
 
                       <!-- Devis -->
                       <div class="slideform-slide">
-                        <div class="slideform-group">
+                        <div id="resumeForm" class="slideform-group">
                           <?php include "./includes/pages/devis-heure/resume.phtml";?>
                         </div>
                       </div>
@@ -145,6 +145,13 @@
     </div>
   </div>
 
+
+ <!------------------- MODALS --------------------->
+
+ <?php include "./includes/pages/devis-heure/modals.phtml";?>
+
+
+<!------------------- SCRIPT --------------------->
   <script src="assets/js/jquery.validate.min.js"></script>
   <script src="assets/js/plugins.js"></script>
   <script src="assets/js/animsition.js"></script>
@@ -176,6 +183,11 @@
   <script type="text/javascript" src="includes/pages/cart.js"></script>
   <script type="text/javascript" src="includes/pages/calculateur.js"></script>
   <script type="text/javascript" src="includes/pages/calculateur2.js"></script>
+
+  <script src="includes/pages/autocomplete.js"></script>
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDh0bbCQWiYa5eGu3FB8GtiDQga2TH_fGE&libraries=places&callback=initAutocomplete"
+    async defer></script>
 
   <script type="text/javascript">
   $(function() {
@@ -224,7 +236,24 @@
         $('#menu1, #menu2').metisMenu();
       });
 
-      $('form').slideform();
+      $('form').slideform({
+        validate: {
+          rules: {
+              radioAnnulation: {
+                  required: true,
+              },
+          },
+          messages: {
+              radioAnnulation: {
+                  required: 'Veuillez choisir une option',
+              },
+          }
+      },
+      submit: function (event, form) {
+        console.log('forward');
+          $form.trigger('goForward');
+      }
+      });
 
       /* $('#selectedObject').select2({
         placeholder: 'Selectionnez un objet',

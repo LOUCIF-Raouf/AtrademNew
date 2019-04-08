@@ -30,7 +30,7 @@
             nextButtonText: 'OK',
             prevButtonText: 'Précedent',
             submitButtonText: 'Payer',
-            validate: null,
+            validate: true,
             submit: null
         };
 

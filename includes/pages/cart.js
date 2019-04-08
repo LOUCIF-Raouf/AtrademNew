@@ -84,6 +84,12 @@ Cart.addItem = function (item) {
   return Cart;
 };
 
+Cart.addAttr = function (id) {
+  console.log(Cart.addItem(
+    Cart.getFullItem(id)
+  ))
+}
+
 Cart.itemsCount = function () {
   var accumulator = 0;
   for (var i = 0; i < Cart.items.length; i++) {
@@ -144,6 +150,10 @@ Cart.subSizing = function () {
 
 Cart.init = function () {
   var items = localStorage.getItem('cart-items');
+  if (!localStorage.getItem('uid')) {
+    var uid = Math.floor(Math.random() * Math.floor(99999));
+    localStorage.setItem('uid', uid);
+  }
   if (items) {
     Cart.items = JSON.parse(items);
   } else {

@@ -46,24 +46,25 @@ function initAutocomplete() {
     // Create the autocomplete object, restricting the search predictions to
     // geographical location types.
     var defaultBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(40.518, 29.215),
-        new google.maps.LatLng(41.242, 30.370));
+        new google.maps.LatLng(48.568970, 2.480693),
+        new google.maps.LatLng(48.568970, 2.480693)
+    );
     autocomplete = new google.maps.places.Autocomplete(
         document.getElementById('autocomplete'), {
-            location: myLatlng,
-            radius: 1500, // (in meters; this is 150Km)
-            types: ['geocode'],
+            bounds: defaultBounds,
+            radius: 6000000, // (in meters; this is 150Km)
+            types: ['address'],
+            /* strictBounds: true, */
             componentRestrictions: countryRestrict,
-            strictbounds: true,
         });
 
     autocomplete2 = new google.maps.places.Autocomplete(
         document.getElementById('autocomplete2'), {
-            location: myLatlng,
-            radius: 150000, // (in meters; this is 150Km)
-            types: ['geocode'],
+            bounds: defaultBounds,
+            radius: 6000000, // (in meters; this is 150Km)
+            types: ['address'],
+            /* strictBounds: true, */
             componentRestrictions: countryRestrict,
-            strictbounds: true,
 
         });
     // Avoid paying for data that you don't need by restricting the set of
@@ -169,16 +170,12 @@ function callback(response, status) {
                 // $('#from').text(origin);
                 // $('#to').text(destination);
                 if (distance_in_kilo >= 30) {
-                    /* Cart.addItem({
-                        id: "adressesDem",
-                        quantity: -1,
-                    }); */
                     Cart.addItem({
-                        id: "adressesDem",
+                        id: "adresses",
                         quantity: -Infinity,
                     });
                     Cart.addItem({
-                        id: "adressesDem",
+                        id: "adresses",
                         price: 2,
                         label: "Nb de Kilomètres",
                         quantity: distance_in_kilo,
@@ -186,16 +183,12 @@ function callback(response, status) {
                         arrival: $('#autocomplete2').val(),
                     });
                 } else {
-                    /* Cart.addItem({
-                        id: "adressesDem",
-                        quantity: -1,
-                    }); */
                     Cart.addItem({
-                        id: "adressesDem",
+                        id: "adresses",
                         quantity: -Infinity,
                     });
                     Cart.addItem({
-                        id: "adressesDem",
+                        id: "adresses",
                         price: 1,
                         label: "Nb de Kilomètres",
                         quantity: distance_in_kilo,

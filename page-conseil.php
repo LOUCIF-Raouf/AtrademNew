@@ -264,8 +264,8 @@
                                                                         <a href="#" class="cbr-button px-2 btn-sm out-line-2px button-has-bg-2"><span
                                                                                 class="text-uppercase">Fermer</span></a>
                                                                     </div>
-                                                            </form>
-                                                        </div>
+                                                                </div>
+                                                        </form>
                                                     </div>
                                                 </div>
                                             </div>

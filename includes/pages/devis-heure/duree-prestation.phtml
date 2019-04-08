@@ -74,3 +74,23 @@
             durée de votre prestation est automatiquement prolongée de cette même durée.</p>
     </div>
 </div>
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#dureePrestationForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                let qty = Cart.getFullItem('duree_presta').quantity;
+                let id = Cart.getFullItem('duree_presta').id;
+                let uid = localStorage.getItem('uid');
+              if(!Cart.getItem("duree_presta")){
+                $("#dureePrestaFailModal").modal("show");
+              }else{
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { qty: qty, id: id, uid: uid}
+                })
+
+              }
+            }); },2000);
+  </script>

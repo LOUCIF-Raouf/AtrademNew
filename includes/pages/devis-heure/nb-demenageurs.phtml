@@ -77,7 +77,22 @@
 </div>
 
 <script>
-    $('b').on('click', e => {
-    console.log(Cart.getFullItem('nbDéménageurs'))
-    })
-</script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#nbDemenForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                let qty = Cart.getFullItem('nb_demen').quantity;
+                let id = Cart.getFullItem('nb_demen').id;
+                let uid = localStorage.getItem('uid');
+              if(!Cart.getItem("nb_demen")){
+                $("#nbDemenFailModal").modal("show");
+              }else{
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { qty: qty, id: id, uid: uid}
+                })
+
+              }
+            }); },2000);
+  </script>

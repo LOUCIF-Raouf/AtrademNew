@@ -120,3 +120,23 @@
       </div>
     </div>
   </div>
+
+  <script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#calcObjectForm .slideform-btn-next');
+            OKButton.on('click', e => {
+              e.preventDefault();
+              let val = Cart.getFullItem
+              if(Cart.items.length == 0){
+                $("#calcObjectFailModal").modal("show");
+              }else{
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { val: val}
+                })
+
+              }
+            }); },2000);
+  </script>

@@ -47,7 +47,7 @@
 
 <div class="col-md-6 mx-auto mb-5 d-flex justify-content-around">
         <div>
-            <input type="radio" name="taille-camion" class="radio-taille-camion-0" id="radio-taille-camion-0" data-id="radio-taille-camion" >
+            <input type="radio" name="taille-camion" class="radio-taille-camion-0" value="none" id="radio-taille-camion-0" data-id="radio-taille-camion" >
             <label for="radio-taille-camion-0" class="ml-3"> Je n'ai pas besoin de camion</label>
         </div>
 </div>
@@ -71,3 +71,24 @@
             camion de 22m3 devrait suffire. </p>
     </div>
 </div>
+
+<script>
+  var OKButton;
+            setTimeout(() => {
+            OKButton = $('#tailleCamionForm .slideform-btn-next');
+            OKButton.on('click', e => {
+                let qty = Cart.getFullItem('taille_camion').quantity;
+                let id = Cart.getFullItem('taille_camion').id;
+                let uid = localStorage.getItem('uid');
+              if(!Cart.getItem("taille_camion") && document.getElementById('radio-taille-camion-0').checked != true){
+                $("#tailleCamionFailModal").modal("show");
+              }else{
+                $.ajax({
+                  method: "POST",
+                  url: "includes/contact/ajax-devis.php",
+                  data: { qty: qty, id: id, uid: uid}
+                })
+
+              }
+            }); },2000);
+  </script>
